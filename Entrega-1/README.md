@@ -17,6 +17,7 @@
 #### 2. ¿Qué equipo comete más faltas en los Superclásicos?
 #### 3. ¿En qué circuntancias se dan más de que un partido tenga más faltas de lo promedio en un Superclásico?
 #### 4. ¿Hay alguna relación entre las faltas y el resultado de partido?
+#### 5. ¿El VAR ha influenciado en la identificación de faltas realizadas?
 ## Historia visual
 #### La historia que queremos contar en este proyecto es 
 ## Resultados
