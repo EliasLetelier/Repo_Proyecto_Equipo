@@ -1,1 +1,3 @@
-
+# Descripción de base de datos
+#### La base de datos será un informe sobre los Superclásicos realizados en el fútbol chileno durante este siglo, donde se analizarán datos sobre las fechas de cada partido, el equipo local de cada partido, la competición e instancia en cual se enfrentaron, el resultado y el árbitro de cada partido entre Universidad de Chile y Colo-Colo durante el siglo XXl.
+#### El objetivo de esta tabla es tener los datos de todos los partidos realizados en este siglo, para tener en cuenta todos ellos al momento de realizar la investigación, porque es necesario saber que partido se tiene que analizar para buscar los otros datos restantes.
