@@ -22,5 +22,16 @@
 ## Historia visual
 #### La historia que queremos contar en este proyecto es una investigación sobre la cantidad de faltas cometidas durante un Superclásico del siglo XXl, unos datos en los que no se toma mucho peso, ya que solo se abordan algunos temas en específico como faltas agresivas en vez de todos los datos que ofrecen a investigar, por lo que queremos contarlo de una forma sencilla y fácil de entender para todo público, en el que se muestre de forma ordenada y cronológica, con una temática para que todo aficionado a este deporte pueda sentir lo que representa este enfrentamiento en el país.
 #### Los elementros gráficos que nos gustaría realizar para narrar la historia, es en primer lugar, realizar una línea temporal en donde se pueda revisar partido por partido ordenado desde el año 2000 hacía adelante, todos los datos de la investigación, más algunos datos extras como el resultado y la indumentaria de cada equipo en dicha ocasión.
+#### Otro elemento gráfico es hacer una tabla dividida en dos partes, una con los datos totales de Colo-Colo y otra de Universidad de Chile, donde contengan la cantidad de faltas realizadas en todos los partidos, las tarjetas recibidas, veces en cual jugó de local, el número de victorias, empates y derrotas, árbitro que más cobro a favor y en contra y futbolista que más faltas realizó y recibió.
+#### Por último, es realizar una tabla comparativa de cada cinco años (2000 a 2004, 2005 a 2009, 2010 a 2014...) con todos los datos unidos de los equipos para comparar entre que años, las mismas categorías utilizadas que en la tabla anterior.
+### Lo novedoso es:
+#### La comparación de datos entre cada cinco años.
+#### El parámetro utilizado para contabilizar cada estadística.
+#### Verificar si realmente hay una decadencia en la cantidad de faltas y tarjetas recibidas en los Superclásicos.
+#### Entender qué estadísticas han influido en las faltas realizadas en este tipo de partidos.
 ## Resultados
-#### aa
+#### Lo mínimo esperable es la validación o descarte de nuestra hipótesis principal: determinar mediante evidencia estadística si el volumen de faltas en los Superclásicos ha disminuido entre el año 2000 y el 2026.
+#### El resultado máximo sería revelar la causalidad y el cambio de paradigma en el fútbol chileno. No solo decir "hay menos faltas", sino explicar por qué.
+#### Correlación: Demostrar mediante datos cómo la implementación del VAR y el aumento de la vigilancia mediática han modificado el comportamiento de los jugadores (por ejemplo, ver si las tarjetas rojas bajaron drásticamente desde que existe el videoarbitraje).
+#### Hallazgos: Identificar casos donde la tendencia se rompe (por ejemplo, un clásico del 2024 con más faltas que uno del 2005) y analizar qué factores externos (presión por el descenso, peleas previas) reactivaron la agresividad antigua en la era moderna.
+#### Impacto en el Resultado: Determinar si la disminución de la agresividad física ha tenido un impacto en la cantidad de goles o en la paridad de los resultados, entregando una visión completa de cómo la "paz reglamentaria" afectó la competitividad del clásico.
