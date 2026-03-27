@@ -19,6 +19,7 @@
 #### 4. ¿Hay alguna relación entre las faltas y el resultado de partido?
 #### 5. ¿El VAR ha influenciado en la identificación de faltas realizadas?
 ## Historia visual
-#### La historia que queremos contar en este proyecto es una investigación sobre la cantidad de faltas cometidas durante un Superclásico del siglo XXl, por lo que queremos contarlo de una forma sencilla y fácil de entender para todo público, en el que se muestre 
+#### La historia que queremos contar en este proyecto es una investigación sobre la cantidad de faltas cometidas durante un Superclásico del siglo XXl, unos datos en los que no se toma mucho peso, ya que solo se abordan algunos temas en específico como faltas agresivas en vez de todos los datos que ofrecen a investigar, por lo que queremos contarlo de una forma sencilla y fácil de entender para todo público, en el que se muestre de forma ordenada y cronológica, con una temática para que todo aficionado a este deporte pueda sentir lo que representa este enfrentamiento en el país.
+####
 ## Resultados
 #### aa
