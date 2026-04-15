@@ -12,3 +12,5 @@
 #### ¿En qué estadio es más propenso las faltas?
 #### ¿El tipo de competición influye?
 #### ¿El resultado influye las faltas cometidas por un equipo?
+#### ¿Habrá alguna relación con los años de los partidos?
+#### ¿En qué año se cometen más y menos faltas?
