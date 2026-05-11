@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial por Árbitro: Victorias y Empates</title>
+
+    <!-- Vega, Vega-Lite y Vega-Embed -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        #vis {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Historial por Árbitro: Victorias y Empates (Superclásico)</h1>
+
+    <div id="vis"></div>
+
+    <script>
+        const spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+            "description": "Historial de árbitros en Superclásicos",
+
+            "data": {
+                "values": [
+                    {"Árbitro":"Julio Bascuñán","Ganador":"Colo-Colo","Cantidad":4},
+                    {"Árbitro":"Julio Bascuñán","Ganador":"Empate","Cantidad":2},
+                    {"Árbitro":"Julio Bascuñán","Ganador":"U de Chile","Cantidad":2},
+
+                    {"Árbitro":"Carlos Chandía","Ganador":"Colo-Colo","Cantidad":4},
+                    {"Árbitro":"Carlos Chandía","Ganador":"Empate","Cantidad":2},
+                    {"Árbitro":"Carlos Chandía","Ganador":"U de Chile","Cantidad":1},
+
+                    {"Árbitro":"Roberto Tobar","Ganador":"Colo-Colo","Cantidad":5},
+                    {"Árbitro":"Roberto Tobar","Ganador":"Empate","Cantidad":2},
+
+                    {"Árbitro":"Pablo Pozo","Ganador":"Colo-Colo","Cantidad":4},
+                    {"Árbitro":"Pablo Pozo","Ganador":"Empate","Cantidad":1},
+                    {"Árbitro":"Pablo Pozo","Ganador":"U de Chile","Cantidad":1},
+
+                    {"Árbitro":"Eduardo Gamboa","Ganador":"Colo-Colo","Cantidad":4},
+                    {"Árbitro":"Eduardo Gamboa","Ganador":"Empate","Cantidad":1},
+
+                    {"Árbitro":"Enrique Osses","Ganador":"Colo-Colo","Cantidad":1},
+                    {"Árbitro":"Enrique Osses","Ganador":"Empate","Cantidad":1},
+                    {"Árbitro":"Enrique Osses","Ganador":"U de Chile","Cantidad":3},
+
+                    {"Árbitro":"Cristián Garay","Ganador":"Empate","Cantidad":2},
+                    {"Árbitro":"Cristián Garay","Ganador":"U de Chile","Cantidad":1},
+
+                    {"Árbitro":"Jorge Osorio","Ganador":"Colo-Colo","Cantidad":4},
+
+                    {"Árbitro":"Rubén Selman","Ganador":"Colo-Colo","Cantidad":1},
+                    {"Árbitro":"Rubén Selman","Ganador":"Empate","Cantidad":2},
+
+                    {"Árbitro":"Felipe González Alveal","Ganador":"Empate","Cantidad":1},
+                    {"Árbitro":"Felipe González Alveal","Ganador":"U de Chile","Cantidad":1},
+
+                    {"Árbitro":"Patricio Polic","Ganador":"Colo-Colo","Cantidad":1},
+                    {"Árbitro":"Patricio Polic","Ganador":"U de Chile","Cantidad":1},
+
+                    {"Árbitro":"Piero Maza","Ganador":"Colo-Colo","Cantidad":1},
+                    {"Árbitro":"Piero Maza","Ganador":"U de Chile","Cantidad":1}
+                ]
+            },
+
+            "mark": "bar",
+
+            "encoding": {
+                "y": {
+                    "field": "Árbitro",
+                    "type": "nominal",
+                    "sort": "-x",
+                    "title": "Árbitro"
+                },
+
+                "x": {
+                    "field": "Cantidad",
+                    "type": "quantitative",
+                    "title": "Número de Partidos"
+                },
+
+                "color": {
+                    "field": "Ganador",
+                    "type": "nominal",
+                    "title": "Resultado Final",
+                    "scale": {
+                        "domain": ["U de Chile", "Colo-Colo", "Empate"],
+                        "range": ["#003399", "#000000", "#808080"]
+                    }
+                },
+
+                "tooltip": [
+                    {"field":"Árbitro","type":"nominal"},
+                    {"field":"Ganador","type":"nominal"},
+                    {"field":"Cantidad","type":"quantitative"}
+                ]
+            },
+
+            "width": 700,
+            "height": 500,
+
+            "title": {
+                "text": "Historial por Árbitro: Victorias y Empates (Superclásico)",
+                "fontSize": 24,
+                "anchor": "start"
+            }
+        };
+
+        vegaEmbed('#vis', spec);
+    </script>
+
+</body>
+</html>
