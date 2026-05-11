@@ -1,7 +1,7 @@
 import pandas as pd
 import altair as alt
 
-# Cargar y limpiar datos
+
 # df is assumed to be already loaded and cleaned from previous steps.
 # If not, this block ensures it's loaded with necessary preprocessing.
 if 'df' not in locals() and 'df' not in globals():
@@ -10,15 +10,14 @@ if 'df' not in locals() and 'df' not in globals():
     df['Árbitro'] = df['Árbitro'].str.strip()
     df['Ganador'] = df['Ganador'].str.strip()
 
-# Agrupar por Árbitro y Resultado (incluyendo empates)
-# Primero identificamos los árbitros más frecuentes para no saturar el gráfico
+
 top_arbitros = df['Árbitro'].value_counts().nlargest(12).index
 df_filtered = df[df['Árbitro'].isin(top_arbitros)].copy()
 
-# Preparar los datos para el gráfico
+
 viz_data = df_filtered.groupby(['Árbitro', 'Ganador']).size().reset_index(name='Cantidad')
 
-# Crear el gráfico comparativo completo (Victorias + Empates)
+
 chart = alt.Chart(viz_data).mark_bar().encode(
     y=alt.Y('Árbitro:N', title='Árbitro', sort='-x'),
     x=alt.X('Cantidad:Q', title='Número de Partidos'),
