@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial por Árbitro: Victorias y Empates</title>
+    <title>Frecuencia y Asistencia por Estadio</title>
 
-    <!-- Vega, Vega-Lite y Vega-Embed -->
+    <!-- Librerías Vega -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -20,110 +20,106 @@
         #vis {
             background: white;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
 
-    <h1>Historial por Árbitro: Victorias y Empates (Superclásico)</h1>
+    <h1>Frecuencia y Asistencia por Estadio</h1>
 
     <div id="vis"></div>
 
     <script>
+
         const spec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-            "description": "Historial de árbitros en Superclásicos",
+            "description": "Cantidad de partidos y promedio de público por estadio",
 
             "data": {
                 "values": [
-                    {"Árbitro":"Julio Bascuñán","Ganador":"Colo-Colo","Cantidad":4},
-                    {"Árbitro":"Julio Bascuñán","Ganador":"Empate","Cantidad":2},
-                    {"Árbitro":"Julio Bascuñán","Ganador":"U de Chile","Cantidad":2},
 
-                    {"Árbitro":"Carlos Chandía","Ganador":"Colo-Colo","Cantidad":4},
-                    {"Árbitro":"Carlos Chandía","Ganador":"Empate","Cantidad":2},
-                    {"Árbitro":"Carlos Chandía","Ganador":"U de Chile","Cantidad":1},
+                    {
+                        "Estadio": "Estadio Monumental",
+                        "Cantidad_Partidos": 20,
+                        "Promedio_Publico": 35000
+                    },
 
-                    {"Árbitro":"Roberto Tobar","Ganador":"Colo-Colo","Cantidad":5},
-                    {"Árbitro":"Roberto Tobar","Ganador":"Empate","Cantidad":2},
+                    {
+                        "Estadio": "Estadio Nacional",
+                        "Cantidad_Partidos": 18,
+                        "Promedio_Publico": 42000
+                    },
 
-                    {"Árbitro":"Pablo Pozo","Ganador":"Colo-Colo","Cantidad":4},
-                    {"Árbitro":"Pablo Pozo","Ganador":"Empate","Cantidad":1},
-                    {"Árbitro":"Pablo Pozo","Ganador":"U de Chile","Cantidad":1},
+                    {
+                        "Estadio": "Santa Laura",
+                        "Cantidad_Partidos": 8,
+                        "Promedio_Publico": 15000
+                    },
 
-                    {"Árbitro":"Eduardo Gamboa","Ganador":"Colo-Colo","Cantidad":4},
-                    {"Árbitro":"Eduardo Gamboa","Ganador":"Empate","Cantidad":1},
+                    {
+                        "Estadio": "El Teniente",
+                        "Cantidad_Partidos": 5,
+                        "Promedio_Publico": 12000
+                    },
 
-                    {"Árbitro":"Enrique Osses","Ganador":"Colo-Colo","Cantidad":1},
-                    {"Árbitro":"Enrique Osses","Ganador":"Empate","Cantidad":1},
-                    {"Árbitro":"Enrique Osses","Ganador":"U de Chile","Cantidad":3},
+                    {
+                        "Estadio": "La Portada",
+                        "Cantidad_Partidos": 3,
+                        "Promedio_Publico": 18000
+                    }
 
-                    {"Árbitro":"Cristián Garay","Ganador":"Empate","Cantidad":2},
-                    {"Árbitro":"Cristián Garay","Ganador":"U de Chile","Cantidad":1},
-
-                    {"Árbitro":"Jorge Osorio","Ganador":"Colo-Colo","Cantidad":4},
-
-                    {"Árbitro":"Rubén Selman","Ganador":"Colo-Colo","Cantidad":1},
-                    {"Árbitro":"Rubén Selman","Ganador":"Empate","Cantidad":2},
-
-                    {"Árbitro":"Felipe González Alveal","Ganador":"Empate","Cantidad":1},
-                    {"Árbitro":"Felipe González Alveal","Ganador":"U de Chile","Cantidad":1},
-
-                    {"Árbitro":"Patricio Polic","Ganador":"Colo-Colo","Cantidad":1},
-                    {"Árbitro":"Patricio Polic","Ganador":"U de Chile","Cantidad":1},
-
-                    {"Árbitro":"Piero Maza","Ganador":"Colo-Colo","Cantidad":1},
-                    {"Árbitro":"Piero Maza","Ganador":"U de Chile","Cantidad":1}
                 ]
             },
 
             "mark": "bar",
 
             "encoding": {
+
                 "y": {
-                    "field": "Árbitro",
+                    "field": "Estadio",
                     "type": "nominal",
                     "sort": "-x",
-                    "title": "Árbitro"
+                    "title": "Recinto Deportivo"
                 },
 
                 "x": {
-                    "field": "Cantidad",
+                    "field": "Cantidad_Partidos",
                     "type": "quantitative",
-                    "title": "Número de Partidos"
+                    "title": "Partidos Jugados"
                 },
 
                 "color": {
-                    "field": "Ganador",
-                    "type": "nominal",
-                    "title": "Resultado Final",
+                    "field": "Promedio_Publico",
+                    "type": "quantitative",
+                    "title": "Promedio Público",
+
                     "scale": {
-                        "domain": ["U de Chile", "Colo-Colo", "Empate"],
-                        "range": ["#003399", "#000000", "#808080"]
+                        "scheme": "greens"
                     }
                 },
 
                 "tooltip": [
-                    {"field":"Árbitro","type":"nominal"},
-                    {"field":"Ganador","type":"nominal"},
-                    {"field":"Cantidad","type":"quantitative"}
+                    {"field":"Estadio","type":"nominal"},
+                    {"field":"Cantidad_Partidos","type":"quantitative","title":"Partidos"},
+                    {"field":"Promedio_Publico","type":"quantitative","title":"Promedio Público"}
                 ]
             },
 
             "width": 700,
-            "height": 500,
+            "height": 450,
 
             "title": {
-                "text": "Historial por Árbitro: Victorias y Empates (Superclásico)",
+                "text": "Frecuencia y Asistencia por Estadio",
                 "fontSize": 24,
                 "anchor": "start"
             }
         };
 
         vegaEmbed('#vis', spec);
+
     </script>
 
 </body>
