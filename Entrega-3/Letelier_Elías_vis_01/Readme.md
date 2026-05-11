@@ -1,1 +1,8 @@
-# Documentación
+# Readme personal
+## Explicación de cómo se realizó el proceso de visualización, con los pasos y descinones tomados.
+#### El proceso de visualización lo pude llevar a cabo en parte gracias a la ayudantía, pero mayormente con Gemini de Google Colab, quien me ayudó a ejecutar los códigos correctamente, aunque tuve varios problemas con la realización que quería hacer, porque cuando lo realizaba de forma manual, siempre tenia un mínimo error por lo que no se podía ejecutar a la perfección, y cuando le pedía ayuda a la IA en Google Colab, había veces en que me realizaba un gráfico totalmente distinto al que quería hacer. Por lo que en esos casos recurría a Gemini pero de forma externa para que me ayudara con esos últimos problemas y poder realizar el enfoque tomado finalmente.
+
+## Base de datos (CSV) que utilizaron, cómo la procesaron hasta dejarla lista para usar en la visualización que quieren hacer y por qué la seleccionaron.
+#### La base de datos que utilice es "Estadísticas generales Clásicos", ya que aún no combinamos ambos datos a la falta aún de la base de datos de mi compañero, por lo que fue necesario. Para utilizarla en el momento de visualización, se tuvieron que limpiar ciertas columnas que estaba en una misma columna del trabajo anterior. Las visualizaciones escogidas fueron tres distintas, esto porque al ser una base de datos corta, es necesario conocer la máxima cantidad de variables posibles. Por lo que escogí las variables que más pueden influir con el propósito de nuestro trabajo. 
+
+## Ejemplos sobre preguntas que puede responder su visualización de datos final (o el conjunto de visualizaciones que crearon).
