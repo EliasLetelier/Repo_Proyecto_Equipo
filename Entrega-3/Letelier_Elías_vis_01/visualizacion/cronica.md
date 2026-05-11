@@ -2,5 +2,5 @@
 #### El partido que para todo el mundo futbolístico en Chile, la Universidad de Chile contra Colo-Colo genera repercusión incluso para aquellos quienes no son aficionados del deporte, en donde es de lo más hablado durante la semana. En esta crónica se analizará sobre que factores pueden influir la provocación de faltas en este tipo de partidos. Se analizará lo externo, no la falta exactamente.
 #### Durante el siglo XXl, se han realizado un total de 63 partidos oficiales entre la Universidad de Chile y Colo-Colo, enfrentandóse en instancias del Torneo Nacional, Copa Chile y SuperCopa. En donde hay una amplia diferencia alba con 30 victorias, 17 empates y solo 16 victorias por parte de los azules, en donde hay determinadas rachas por parte de cada equipo, y donde el resultado influye en la cantidad provocada por parte de cada equipo.
 #
-#### La siguiente imagen demuestra que el equipo perdedor recurre a realizar una mayor cantidad de faltas a diferencia del equipo ganador
-#### Este dato también demuestra que por parte de Colo-Colo al tener una mayor cantidad de victorias, es el equipo con mayor cantidad de goles, con un total de 89 goles, mientras la "U" tiene un total de 69
+#### La imagen demuestra que el equipo perdedor recurre a realizar una mayor cantidad de faltas a diferencia del equipo ganador
+#### Este dato también demuestra que por parte de Colo-Colo al tener una mayor cantidad de victorias, es el equipo con mayor cantidad de goles, con un total de 89 goles, mientras la "U" tiene un total de 69 anotaciones.
