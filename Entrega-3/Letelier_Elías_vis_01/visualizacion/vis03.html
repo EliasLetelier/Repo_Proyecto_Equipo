@@ -1,40 +1,128 @@
-import pandas as pd
-import altair as alt
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial por Árbitro - Superclásico</title>
 
+    <!-- Librerías Vega -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-# df is assumed to be already loaded and cleaned from previous steps.
-# If not, this block ensures it's loaded with necessary preprocessing.
-if 'df' not in locals() and 'df' not in globals():
-    df = pd.read_csv('Estadisticas U-COLOCOLO - Hoja 1.csv', skiprows=1)
-    df.columns = [c.strip() for c in df.columns]
-    df['Árbitro'] = df['Árbitro'].str.strip()
-    df['Ganador'] = df['Ganador'].str.strip()
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 20px;
+        }
 
+        #grafico {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
 
-top_arbitros = df['Árbitro'].value_counts().nlargest(12).index
-df_filtered = df[df['Árbitro'].isin(top_arbitros)].copy()
+    <h1>Historial por Árbitro: Victorias y Empates (Superclásico)</h1>
 
+    <div id="grafico"></div>
 
-viz_data = df_filtered.groupby(['Árbitro', 'Ganador']).size().reset_index(name='Cantidad')
+    <script>
 
+        const spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-chart = alt.Chart(viz_data).mark_bar().encode(
-    y=alt.Y('Árbitro:N', title='Árbitro', sort='-x'),
-    x=alt.X('Cantidad:Q', title='Número de Partidos'),
-    color=alt.Color('Ganador:N',
-                    scale=alt.Scale(domain=['U de Chile', 'Colo-Colo', 'Empate'],
-                                    range=['#003399', '#000000', '#808080']),
-                    title="Resultado"),
-    order=alt.Order('Ganador:N', sort='ascending'),
-    tooltip=['Árbitro', 'Ganador', 'Cantidad']
-).properties(
-    width=600,
-    height=450,
-    title='Historial por Árbitro: Victorias y Empates'
-).configure_title(
-    fontSize=18,
-    anchor='start'
-)
+            "description": "Resultados históricos por árbitro en el Superclásico chileno",
 
-chart.save('comparativo_completo_arbitros.html')
-chart
+            "data": {
+                "values": [
+
+                    {"Árbitro":"Julio Bascuñán","Ganador":"Colo-Colo","Cantidad":4},
+                    {"Árbitro":"Julio Bascuñán","Ganador":"Empate","Cantidad":2},
+                    {"Árbitro":"Julio Bascuñán","Ganador":"U de Chile","Cantidad":2},
+
+                    {"Árbitro":"Carlos Chandía","Ganador":"Colo-Colo","Cantidad":4},
+                    {"Árbitro":"Carlos Chandía","Ganador":"Empate","Cantidad":2},
+                    {"Árbitro":"Carlos Chandía","Ganador":"U de Chile","Cantidad":1},
+
+                    {"Árbitro":"Roberto Tobar","Ganador":"Colo-Colo","Cantidad":5},
+                    {"Árbitro":"Roberto Tobar","Ganador":"Empate","Cantidad":2},
+
+                    {"Árbitro":"Pablo Pozo","Ganador":"Colo-Colo","Cantidad":4},
+                    {"Árbitro":"Pablo Pozo","Ganador":"Empate","Cantidad":1},
+                    {"Árbitro":"Pablo Pozo","Ganador":"U de Chile","Cantidad":1},
+
+                    {"Árbitro":"Eduardo Gamboa","Ganador":"Colo-Colo","Cantidad":4},
+                    {"Árbitro":"Eduardo Gamboa","Ganador":"Empate","Cantidad":1},
+
+                    {"Árbitro":"Enrique Osses","Ganador":"Colo-Colo","Cantidad":1},
+                    {"Árbitro":"Enrique Osses","Ganador":"Empate","Cantidad":1},
+                    {"Árbitro":"Enrique Osses","Ganador":"U de Chile","Cantidad":3}
+
+                ]
+            },
+
+            "mark": "bar",
+
+            "encoding": {
+
+                "y": {
+                    "field": "Árbitro",
+                    "type": "nominal",
+                    "title": "Árbitro",
+                    "sort": "-x"
+                },
+
+                "x": {
+                    "field": "Cantidad",
+                    "type": "quantitative",
+                    "title": "Número de Partidos"
+                },
+
+                "color": {
+                    "field": "Ganador",
+                    "type": "nominal",
+                    "title": "Resultado Final",
+
+                    "scale": {
+                        "domain": [
+                            "U de Chile",
+                            "Colo-Colo",
+                            "Empate"
+                        ],
+
+                        "range": [
+                            "#003399",
+                            "#000000",
+                            "#808080"
+                        ]
+                    }
+                },
+
+                "tooltip": [
+                    {"field":"Árbitro","type":"nominal"},
+                    {"field":"Ganador","type":"nominal"},
+                    {"field":"Cantidad","type":"quantitative"}
+                ]
+            },
+
+            "width": 700,
+            "height": 450,
+
+            "title": {
+                "text": "Historial por Árbitro: Victorias y Empates (Superclásico)",
+                "fontSize": 24,
+                "anchor": "start"
+            }
+        };
+
+        vegaEmbed('#grafico', spec);
+
+    </script>
+
+</body>
+</html>
