@@ -1,0 +1,36 @@
+import pandas as pd
+import altair as alt
+from google.colab import files
+import io
+
+# 1. Carga de archivo
+uploaded = files.upload()
+df = pd.read_csv(io.BytesIO(uploaded[list(uploaded.keys())[0]]), skiprows=1)
+df.columns = [c.strip() for c in df.columns]
+
+# 2. Lógica para detectar penales en base a los goles (formato "1(2)")
+def es_penal(row):
+    u = str(row['Goles U de Chile'])
+    cc = str(row['Goles Colo-Colo'])
+    if '(' in u or '(' in cc:
+        return 'Definición por Penales'
+    return 'Tiempo Reglamentario'
+
+df['Tipo_Definicion'] = df.apply(es_penal, axis=1)
+
+# 3. Gráfico Interactivo
+chart = alt.Chart(df).mark_point(filled=True, size=200).encode(
+    x=alt.X('Fechas:T', title='Año del Encuentro'),
+    y=alt.Y('Ganador:N', title='Ganador'),
+    color=alt.Color('Ganador:N', 
+                    scale=alt.Scale(domain=['U de Chile', 'Colo-Colo', 'Empate'], 
+                                    range=['#003399', '#000000', '#808080'])),
+    shape=alt.Shape('Tipo_Definicion:N', title='Tipo de Definición'),
+    tooltip=['Fechas', 'Goles U de Chile', 'Goles Colo-Colo', 'Estadio', 'Tipo_Definicion']
+).properties(
+    width=750,
+    height=400,
+    title='Superclásico Siglo XXI: Victorias, Empates e Hitos por Penales'
+).interactive()
+
+chart
