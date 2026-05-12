@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-f1c88bae48e0f4a0cd62f2b926f3f30c"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Tipo", "scale": {"domain": ["Total", "Amarilla", "Roja"], "range": ["#333333", "#D4AF37", "#CC0000"]}, "type": "nominal"}, "tooltip": [{"field": "Periodo", "type": "nominal"}, {"field": "Tipo", "type": "nominal"}, {"field": "Cantidad", "type": "quantitative"}], "x": {"field": "Periodo", "title": "Periodo de 5 A\u00f1os", "type": "nominal"}, "xOffset": {"field": "Tipo", "type": "nominal"}, "y": {"field": "Cantidad", "title": "Total de Sanciones", "type": "quantitative"}}, "height": 400, "params": [{"name": "param_21", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Faltas por Periodos", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-f1c88bae48e0f4a0cd62f2b926f3f30c": [{"Periodo": "2000-2004", "Tipo": "Amarilla", "Cantidad": 46}, {"Periodo": "2000-2004", "Tipo": "Roja", "Cantidad": 7}, {"Periodo": "2000-2004", "Tipo": "Total", "Cantidad": 75}, {"Periodo": "2005-2009", "Tipo": "Amarilla", "Cantidad": 96}, {"Periodo": "2005-2009", "Tipo": "Roja", "Cantidad": 17}, {"Periodo": "2005-2009", "Tipo": "Total", "Cantidad": 161}, {"Periodo": "2010-2014", "Tipo": "Amarilla", "Cantidad": 104}, {"Periodo": "2010-2014", "Tipo": "Roja", "Cantidad": 25}, {"Periodo": "2010-2014", "Tipo": "Total", "Cantidad": 186}, {"Periodo": "2015-2019", "Tipo": "Amarilla", "Cantidad": 80}, {"Periodo": "2015-2019", "Tipo": "Roja", "Cantidad": 8}, {"Periodo": "2015-2019", "Tipo": "Total", "Cantidad": 125}, {"Periodo": "2020+", "Tipo": "Amarilla", "Cantidad": 85}, {"Periodo": "2020+", "Tipo": "Roja", "Cantidad": 9}, {"Periodo": "2020+", "Tipo": "Total", "Cantidad": 137}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-46ab11e069eea08f6d28082ee7046d39"}, "mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "Tipo", "scale": {"domain": ["Total", "Amarilla", "Roja"], "range": ["#333333", "#D4AF37", "#CC0000"]}, "title": "Tipo de Sanci\u00f3n", "type": "nominal"}, "tooltip": [{"field": "A\u00f1o", "type": "quantitative"}, {"field": "Tipo", "type": "nominal"}, {"field": "Cantidad", "type": "quantitative"}], "x": {"field": "A\u00f1o", "title": "A\u00f1o", "type": "ordinal"}, "y": {"field": "Cantidad", "title": "Cantidad", "type": "quantitative"}}, "height": 400, "params": [{"name": "param_20", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Evoluci\u00f3n de Sanciones (Total, Amarillas y Rojas)", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-46ab11e069eea08f6d28082ee7046d39": [{"A\u00f1o": 2000, "Tipo": "Amarilla", "Cantidad": 15}, {"A\u00f1o": 2000, "Tipo": "Roja", "Cantidad": 2}, {"A\u00f1o": 2002, "Tipo": "Amarilla", "Cantidad": 5}, {"A\u00f1o": 2002, "Tipo": "Roja", "Cantidad": 2}, {"A\u00f1o": 2003, "Tipo": "Amarilla", "Cantidad": 9}, {"A\u00f1o": 2003, "Tipo": "Roja", "Cantidad": 2}, {"A\u00f1o": 2004, "Tipo": "Amarilla", "Cantidad": 17}, {"A\u00f1o": 2004, "Tipo": "Roja", "Cantidad": 1}, {"A\u00f1o": 2005, "Tipo": "Amarilla", "Cantidad": 19}, {"A\u00f1o": 2005, "Tipo": "Roja", "Cantidad": 7}, {"A\u00f1o": 2006, "Tipo": "Amarilla", "Cantidad": 27}, {"A\u00f1o": 2006, "Tipo": "Roja", "Cantidad": 3}, {"A\u00f1o": 2007, "Tipo": "Amarilla", "Cantidad": 22}, {"A\u00f1o": 2007, "Tipo": "Roja", "Cantidad": 2}, {"A\u00f1o": 2008, "Tipo": "Amarilla", "Cantidad": 14}, {"A\u00f1o": 2008, "Tipo": "Roja", "Cantidad": 1}, {"A\u00f1o": 2009, "Tipo": "Amarilla", "Cantidad": 14}, {"A\u00f1o": 2009, "Tipo": "Roja", "Cantidad": 4}, {"A\u00f1o": 2010, "Tipo": "Amarilla", "Cantidad": 16}, {"A\u00f1o": 2010, "Tipo": "Roja", "Cantidad": 5}, {"A\u00f1o": 2011, "Tipo": "Amarilla", "Cantidad": 18}, {"A\u00f1o": 2011, "Tipo": "Roja", "Cantidad": 4}, {"A\u00f1o": 2012, "Tipo": "Amarilla", "Cantidad": 39}, {"A\u00f1o": 2012, "Tipo": "Roja", "Cantidad": 10}, {"A\u00f1o": 2013, "Tipo": "Amarilla", "Cantidad": 14}, {"A\u00f1o": 2013, "Tipo": "Roja", "Cantidad": 2}, {"A\u00f1o": 2014, "Tipo": "Amarilla", "Cantidad": 17}, {"A\u00f1o": 2014, "Tipo": "Roja", "Cantidad": 4}, {"A\u00f1o": 2015, "Tipo": "Amarilla", "Cantidad": 13}, {"A\u00f1o": 2015, "Tipo": "Roja", "Cantidad": 1}, {"A\u00f1o": 2016, "Tipo": "Amarilla", "Cantidad": 16}, {"A\u00f1o": 2016, "Tipo": "Roja", "Cantidad": 1}, {"A\u00f1o": 2017, "Tipo": "Amarilla", "Cantidad": 18}, {"A\u00f1o": 2018, "Tipo": "Amarilla", "Cantidad": 19}, {"A\u00f1o": 2018, "Tipo": "Roja", "Cantidad": 4}, {"A\u00f1o": 2019, "Tipo": "Amarilla", "Cantidad": 14}, {"A\u00f1o": 2019, "Tipo": "Roja", "Cantidad": 2}, {"A\u00f1o": 2020, "Tipo": "Amarilla", "Cantidad": 13}, {"A\u00f1o": 2021, "Tipo": "Amarilla", "Cantidad": 16}, {"A\u00f1o": 2021, "Tipo": "Roja", "Cantidad": 2}, {"A\u00f1o": 2022, "Tipo": "Amarilla", "Cantidad": 10}, {"A\u00f1o": 2022, "Tipo": "Roja", "Cantidad": 3}, {"A\u00f1o": 2023, "Tipo": "Amarilla", "Cantidad": 9}, {"A\u00f1o": 2024, "Tipo": "Amarilla", "Cantidad": 6}, {"A\u00f1o": 2025, "Tipo": "Amarilla", "Cantidad": 27}, {"A\u00f1o": 2025, "Tipo": "Roja", "Cantidad": 4}, {"A\u00f1o": 2026, "Tipo": "Amarilla", "Cantidad": 4}, {"A\u00f1o": 2000, "Tipo": "Total", "Cantidad": 23}, {"A\u00f1o": 2002, "Tipo": "Total", "Cantidad": 11}, {"A\u00f1o": 2003, "Tipo": "Total", "Cantidad": 16}, {"A\u00f1o": 2004, "Tipo": "Total", "Cantidad": 25}, {"A\u00f1o": 2005, "Tipo": "Total", "Cantidad": 37}, {"A\u00f1o": 2006, "Tipo": "Total", "Cantidad": 42}, {"A\u00f1o": 2007, "Tipo": "Total", "Cantidad": 36}, {"A\u00f1o": 2008, "Tipo": "Total", "Cantidad": 21}, {"A\u00f1o": 2009, "Tipo": "Total", "Cantidad": 25}, {"A\u00f1o": 2010, "Tipo": "Total", "Cantidad": 31}, {"A\u00f1o": 2011, "Tipo": "Total", "Cantidad": 35}, {"A\u00f1o": 2012, "Tipo": "Total", "Cantidad": 69}, {"A\u00f1o": 2013, "Tipo": "Total", "Cantidad": 21}, {"A\u00f1o": 2014, "Tipo": "Total", "Cantidad": 30}, {"A\u00f1o": 2015, "Tipo": "Total", "Cantidad": 21}, {"A\u00f1o": 2016, "Tipo": "Total", "Cantidad": 24}, {"A\u00f1o": 2017, "Tipo": "Total", "Cantidad": 26}, {"A\u00f1o": 2018, "Tipo": "Total", "Cantidad": 33}, {"A\u00f1o": 2019, "Tipo": "Total", "Cantidad": 21}, {"A\u00f1o": 2020, "Tipo": "Total", "Cantidad": 21}, {"A\u00f1o": 2021, "Tipo": "Total", "Cantidad": 25}, {"A\u00f1o": 2022, "Tipo": "Total", "Cantidad": 17}, {"A\u00f1o": 2023, "Tipo": "Total", "Cantidad": 13}, {"A\u00f1o": 2024, "Tipo": "Total", "Cantidad": 8}, {"A\u00f1o": 2025, "Tipo": "Total", "Cantidad": 47}, {"A\u00f1o": 2026, "Tipo": "Total", "Cantidad": 6}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
