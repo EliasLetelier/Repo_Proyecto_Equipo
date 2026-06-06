@@ -32,3 +32,4 @@
 #### Junto con esto también agregamos ciertos elementos interactivos, el carrusel de los estadios y la pregunta final le agrega un dinamismo a la historia. La pregunta final, en donde cualquier opción que se escoja sale incorrecta, ayuda a darle cierta sorpresa al dato, que si bien hay un equipo con una mayor cantidad de faltas cometidas, realmente la diferencia es muy poca como para considerarla. 
 
 
+### Link Miro Mapa de viaje y Perfiles de personas: https://miro.com/app/board/uXjVHJM01ng=/?share_link_id=325893780342
