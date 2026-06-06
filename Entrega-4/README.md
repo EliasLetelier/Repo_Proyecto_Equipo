@@ -7,6 +7,7 @@
 #### Queremos que nuestra propuesta pueda ser disfrutable y entretenida tanto para el aficionado más común y corriente y para aquel experto deportivo que no tenga conocimiento de este apartado que son tomadas en cuenta pero meramente en el momento, y no del impacto que puede generar en cada encuentro.
 ## Manual de identidad
 #### El manueal de identidad fue creado a raíz de dos ideas claves: El color de cada conjunto y el estilo de las páginas de deportes más famosas como Transfermark y Sofascore. Por lo que al momento de elegir el estilo, la inspiración fue marcada principalmente por estas dos razones. Todas estas ideas del diseño de cómo queremos hacer nuestra webstory lo hicimos a través de un moodboard, el cual contiene tanto imágenes de partidos entre Universidad de Chile y Colo-Colo, diseño de arte de algunos elementos que se utilizaran, el logo, los colores que se utilizarán y el tipo de fuente de letras que utilizaremos. 
-#### En primer lugar, se abarca un poco sobre que trata el contenido de la webstory, las faltas en los Superclásicos chilenos del siglo XXl y el propósito visual de este. El siguiente punto del manual es el moodboard 
+#### En primer lugar, se abarca un poco sobre que trata el contenido de la webstory, las faltas en los Superclásicos chilenos del siglo XXl y el propósito visual de este. El siguiente punto del manual es el moodboard, en donde muestra distintas imágenes que representa lo que estará presente en el trbajao, como los colores, las tipografías, y diseño de ilustraciones por las que se basará la webstory.
+#### 
 ## Wireframes
 #### AAAA
