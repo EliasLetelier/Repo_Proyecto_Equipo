@@ -1,0 +1,162 @@
+body {
+    font-family: 'Open-Sans', arial ;
+    background-color: #020d2b;
+    align-items: center;
+    text-align: center; 
+.seccion-oscura {
+    background-color:#020d2b ); /* El color #12161A de tus variables */
+    color: var(--white);
+    padding: 60px 10%;
+}
+
+.seccion-imagen-fijo {
+    /* Cambia 'guitarra.jpg' por el nombre real de tu imagen en tu carpeta */
+    background-image: url('ucolo.webp'); 
+    
+    /* Estos comandos hacen que la imagen se quede quieta como en tu captura */
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Ajusta la transparencia aquí (0.05 es muy sutil, 0.1 aumenta la intensidad) */
+    opacity: 0,3; 
+    
+    z-index: -1; /* Envía la imagen al fondo, detrás de textos, gráficos y secciones */
+    pointer-events: none; /* Evita que interfiera con los clics o interacciones de la web */
+}
+
+    
+}/* 1. Forzar a que el logo y el menú se pongan uno al lado del otro */
+.encabezado-sitio {
+    background-color: #001a5f;      /* Fondo azul oscuro que combine con tu web */
+    display: flex;
+    justify-content: space-between; /* Manda el logo a la izquierda y el menú a la derecha */
+    align-items: center;            /* Los centra verticalmente */
+    padding: 20px 5%;               /* Espaciado interno para que no toque los bordes */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil decorativa abajo */
+    
+   position: fixed;   /* Cambia el comportamiento para que flote fijo */
+    top: 0;            /* Lo pega al borde superior de la pantalla */
+    left: 0;           /* Lo pega al borde izquierdo */
+    width: 100%;       /* Obliga a la barra a cubrir todo el ancho de lado a lado */
+    z-index: 1000;     /* Actúa como una capa para que la barra pase por encima de los gráficos Vega y botones */
+    box-sizing: border-box; /* Evita que el padding rompa el ancho total */
+}
+/* Estilo estético para el texto del Logo */
+.logo a {
+    color: #ffffff !important;      /* Fuerza el color blanco */
+    text-decoration: none;          /* Quita el subrayado */
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+/* 2. Quitar los puntos de la lista y alinear horizontalmente */
+.barra-navegacion ul {
+    list-style: none;               /* Quita los puntos negros molestos */
+    padding: 0;
+    margin: 0;
+    display: flex;                  /* ¡IMPORTANTE! Pone los enlaces de lado en vez de abajo */
+    gap: 25px;                      /* Separa un enlace de otro por 25px */
+}
+
+/* 3. Cambiar por completo el diseño de los enlaces (Adiós morado) */
+.enlace-nav {
+    color: #ffffff !important;      /* Cambia el morado por blanco brillante */
+    text-decoration: none;          /* Quita el subrayado de los enlaces */
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+    padding: 8px 16px;
+    border-radius: 20px;            /* Bordes ovalados para el efecto hover */
+    transition: all 0.3s ease;      /* Hace que el cambio de color sea suave */
+}
+
+/* 4. Efecto interactivo al pasar el mouse por encima (Hover) */
+.enlace-nav:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Crea un fondo gris transparente */
+    color: #FF7F0E !important;     /* El texto cambia al naranja Plotly de tus variables */
+}
+h1 {
+   color: white;
+    font-family: Open-Sans, arial;
+    font-size: 50px;
+    text-align: center; 
+}
+h2 {
+   color: white;
+    font-family: Open-Sans, arial;
+    font-size: 30px;
+    text-align: center; 
+    border: 5px solid red; 
+     padding: 15px 30px;
+    border-radius: 5px
+}
+img {
+    border: 5px solid red; 
+    border-radius: 20px
+    margin-bottom: 20px
+}
+p {
+   color: white;
+    font-family: Open-Sans, arial;
+    font-size: 20px;
+    text-align: center; 
+   background-color: #001a5f;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+button {
+    background-color: #001a5f;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+    .encabezado-pagina h1 {
+    font-size: 2.2rem;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+}
+
+.encabezado-pagina p {
+    font-size: 1.1rem;
+    color: #a0aec0; /* Texto secundario gris claro */
+    margin: 0;
+}
+
+/* --- CONTENEDOR DEL GRÁFICO (LAYOUT) --- */
+.contenedor-principal {
+    width: 90%;
+    max-width: 900px;
+    margin-bottom: 50px;
+}
+
+/* Estilos específicos para la caja del gráfico Vega */
+#vis {
+    background: #ffffff; /* El fondo del gráfico se mantiene blanco para legibilidad */
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4); /* Sombra más profunda */
+    overflow-x: auto; /* Permite scroll horizontal si se visualiza en celulares */
+}
+
+/* --- TUS BOTONES (Pegar debajo de esto el código que ya tenías) --- */
+button {
+    background-color: #001a5f;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background-color: #002b9e;
+    transform: translateY(-2px);
+}
