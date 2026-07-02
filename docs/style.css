@@ -1,1 +1,479 @@
+/* --- ANIMACIONES DE SCROLL --- */
 
+/* Clase que le pondremos a los elementos que queremos ocultar al principio */
+.oculto-al-scroll {
+  opacity: 0;
+  transform: translateY(100px); /* Los empuja 100 píxeles hacia abajo */
+  transition: all 1.2s cubic-bezier(0.1, 0.8, 0.3, 1); /* Transición suave pero seca al frenar */
+}
+
+/* Clase que JavaScript agregará mágicamente cuando el usuario baje */
+.aparecer {
+  opacity: 1;
+  transform: translateY(0); /* Vuelven a su posición original */
+}
+
+/* Opcional: Hacemos que la columna de texto tarde un poquito más en aparecer que la de imágenes */
+.retraso-1 {
+  transition-delay: 0.3s;
+}
+
+
+
+body {
+  cursor: url('../Entrega-5/diseno_historia/recurso/tarjeta-amarilla.png'), auto;
+    align-items: center;
+}
+
+a:hover, button:hover {
+  cursor: url('../Entrega-5/diseno_historia/recurso/tarjeta-roja.png'), pointer;
+}
+
+img {
+    border: 5px solid red; 
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* TEXTOS */
+/* --- COLUMNA DE TEXTO (El expediente) --- */
+.columna-texto {
+  width: 45%; /* Obliga al texto a no pasar de aquí */
+  padding-right: 3vw; /* Crea un escudo invisible para que no choque con las fotos */
+}
+
+.subtitulo-caos {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 5vw; /* ¡Tamaño gigante! */
+  color: #CCFF00;
+  margin-top: 0;
+  margin-bottom: 30px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0px #FF0000;
+}
+
+.texto-informe {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem; /* ¡Texto de lectura más grande! */
+  line-height: 1.6;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+  background-color: #111111; 
+  padding: 20px 25px;
+  border-left: 6px solid #FF0000; 
+}
+
+/* FONTS */
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.rajdhani-light {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.rajdhani-regular {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rajdhani-medium {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.rajdhani-semibold {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.rajdhani-bold {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+/* --- 1. CONTENEDORES BASE --- */
+.hero-brutalista {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 10px solid #CCFF00;
+}
+
+.video-fondo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  filter: grayscale(100%) contrast(150%); 
+}
+
+.contenedor-titulo {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 2vw;
+  /* CLAVE: perspective crea el espacio 3D para que el efecto translateZ de Animista funcione */
+  perspective: 1200px; 
+}
+
+.titulo-caos {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 11vw;
+  color: #FF0000;
+  margin: 0;
+  line-height: 0.85;
+  text-transform: uppercase;
+}
+
+/* --- 2. DISEÑO BRUTALISTA DE LAS LÍNEAS --- */
+.linea-izquierda {
+  display: block;
+  text-align: left;
+  text-shadow: 12px 12px 0px #CCFF00, -2px -2px 0px #000;
+}
+
+.linea-derecha {
+  display: block;
+  text-align: right;
+  text-shadow: 12px 12px 0px #CCFF00, -2px -2px 0px #000;
+  margin-top: 8vh;
+}
+
+
+/* --- 3. CÓDIGO DE ANIMISTA APLICADO --- */
+
+.slide-in-bck-left {
+  -webkit-animation: slide-in-bck-left 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+          animation: slide-in-bck-left 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+.slide-in-bck-right {
+  -webkit-animation: slide-in-bck-right 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+          animation: slide-in-bck-right 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  
+  /* Retrasamos la animación derecha 0.2 segundos para el efecto de doble golpe */
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+/* --- KEYFRAMES IZQUIERDA --- */
+@-webkit-keyframes slide-in-bck-left {
+  0% {
+    -webkit-transform: translateZ(700px) translateX(-400px);
+            transform: translateZ(700px) translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateX(0);
+            transform: translateZ(0) translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bck-left {
+  0% {
+    -webkit-transform: translateZ(700px) translateX(-400px);
+            transform: translateZ(700px) translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateX(0);
+            transform: translateZ(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* --- KEYFRAMES DERECHA --- */
+@-webkit-keyframes slide-in-bck-right {
+  0% {
+    -webkit-transform: translateZ(700px) translateX(400px);
+            transform: translateZ(700px) translateX(400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateX(0);
+            transform: translateZ(0) translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bck-right {
+  0% {
+    -webkit-transform: translateZ(700px) translateX(400px);
+            transform: translateZ(700px) translateX(400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateX(0);
+            transform: translateZ(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/* --- COLUMNA DE IMÁGENES (El collage de 5 fotos) --- */
+.columna-imagenes {
+ width: 55%; /* Le regalamos más espacio a las fotos */
+  position: relative;
+  min-height: 700px; /* Subimos un poco la altura para que las fotos gigantes quepan bien */
+}
+
+.img-brutal {
+  position: absolute; 
+  width: 65%; /* Más pequeñas para que no saturen la pantalla entera */
+  border: 4px solid #CCFF00;
+  box-shadow: 10px 10px 0px #FF0000; 
+  filter: grayscale(100%) contrast(120%); 
+  transition: all 0.3s ease; 
+}
+
+/* Foto 1: Disputa (Arriba a la izquierda) */
+.img-1 {
+  top: 0;
+  left: -5%;
+  transform: rotate(-5deg);
+  z-index: 2;
+}
+
+/* Foto 2: Disputa (Arriba a la derecha) */
+.img-2 {
+  top: 50px;
+  right: 5%;
+  transform: rotate(7deg);
+  z-index: 1;
+}
+
+/* Foto 3: La Falta (Más abajo a la izquierda) */
+.img-3 {
+  top: 220px;
+  left: -2%;
+  transform: rotate(-8deg);
+  z-index: 3;
+}
+
+/* Foto 4: El Grito (Abajo a la derecha) */
+.img-4 {
+  top: 260px;
+  right: 0;
+  transform: rotate(4deg);
+  z-index: 4;
+}
+
+/* Foto 5: La Tarjeta (En el medio, rompiendo el esquema) */
+.img-5 {
+  top: 150px;
+  left: 15%;
+  width: 70%; /* Esta es un poco más grande para darle peso de conclusión */
+  transform: rotate(-2deg);
+  z-index: 5;
+  border-color: #FF0000; /* Borde rojo invertido */
+  box-shadow: 10px 10px 0px #CCFF00; /* Sombra amarilla invertida */
+}
+
+/* El efecto de Hover mágico */
+.img-brutal:hover {
+  z-index: 10;
+  filter: grayscale(0%) contrast(100%);
+  transform: rotate(0deg) scale(1.1); 
+  box-shadow: 15px 15px 0px #CCFF00;
+}
+
+/* Al pasar el mouse por la foto 5 (que ya tiene sombra amarilla), se la pasamos a rojo para mantener la locura */
+.img-5:hover {
+  box-shadow: 15px 15px 0px #FF0000;
+}
+.seccion-expediente {
+  background-color: #050505;
+  padding: 15vh 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px; /* Aumenté el gap a 80px para que haya más separación entre el texto y las fotos */
+  border-bottom: 5px solid #FF0000;
+}
+
+
+/* --- NUEVA SECCIÓN CON VIDEO DE FONDO --- */
+.seccion-video-fondo {
+  position: relative;
+  padding: 15vh 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  overflow: hidden; /* Evita que el video se salga */
+  border-bottom: 5px solid #FF0000;
+  min-height: 80vh; /* Para que la caja tenga buen tamaño */
+}
+
+/* Configuramos el video para que quede al fondo */
+.video-fondo-seccion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Llena la pantalla sin aplastarse */
+  z-index: 0;
+  filter: grayscale(100%) contrast(150%);
+}
+
+/* La capa oscura que va sobre el video para que el texto resalte */
+.seccion-video-fondo::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7); 
+  z-index: 0;
+}
+
+/* Obligamos a que el texto y las fotos floten por encima del video y la capa oscura */
+.seccion-video-fondo > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   SECCIÓN DE DATOS (IMÁGENES FIJAS Y CENTRADAS)
+   ========================================= */
+
+.seccion-datos {
+  background-color: #050505;
+  padding: 15vh 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  border-bottom: 5px solid #FF0000;
+}
+
+.seccion-datos .columna-texto {
+  width: 45%;
+  max-width: 45%;
+}
+
+/* Columna derecha: Alinea verticalmente las imágenes en el centro */
+.columna-grafico {
+  width: 55%;
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los gráficos horizontalmente en su zona */
+  gap: 45px;          /* Espacio de separación constante entre el gráfico 1 y el 2 */
+}
+
+/* --- CLASE BASE PARA LOS GRÁFICOS ESTÁTICOS --- */
+.grafico-estatico {
+  display: block;
+  width: 95%;        /* Ocupan casi todo el ancho de su columna para que se vean grandes */
+  height: auto;      /* ¡CLAVE! Hace que la imagen escale perfectamente sin cortarse ni deformarse */
+  border-radius: 20px; /* El mismo radio de curvatura que tus otras imágenes */
+  
+  /* Filtro brutalista opcional: se ven en blanco y negro, pero ganan color al pasar el mouse */
+  filter: grayscale(100%) contrast(120%);
+  transition: filter 0.3s ease;
+}
+
+/* Al pasar el mouse recuperan su color original, pero se quedan completamente quietas */
+.grafico-estatico:hover {
+  filter: grayscale(0%) contrast(100%);
+}
+
+/* Gráfico 1: Borde amarillo neón con sombra roja */
+.grafico-estatico-1 {
+  border: 5px solid #CCFF00;
+  box-shadow: 12px 12px 0px #FF0000;
+}
+
+/* Gráfico 2: Borde rojo con sombra amarilla neón (diseño invertido) */
+.grafico-estatico-2 {
+  border: 5px solid #FF0000;
+  box-shadow: 12px 12px 0px #CCFF00;
+}
+
+
+/* =========================================
+   SECCIÓN TEXTO CENTRAL Y FOTOS FLOTANTES (5 FOTOS)
+   ========================================= */
+
+.seccion-centro-scroll {
+  position: relative;
+  min-height: 110vh; /* Subimos un poco el alto para dar espacio a la quinta foto */
+  background-color: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  border-bottom: 5px solid #FF0000;
+}
+
+.texto-central {
+  width: 50%;
+  z-index: 10; 
+  text-align: center;
+  background-color: rgba(17, 17, 17, 0.9); 
+  padding: 50px;
+  border: 4px solid #CCFF00;
+  box-shadow: 15px 15px 0px #FF0000;
+}
+
+.texto-central .texto-informe {
+  border-left: none;
+  margin-bottom: 0;
+}
+
+/* --- CLASE BASE PARA LAS FOTOS FLOTANTES --- */
+.img-flotante {
+  position: absolute;
+  width: 22%; 
+  border: 4px solid #FF0000;
+  filter: grayscale(100%) contrast(120%);
+  transition: all 0.5s ease;
+  z-index: 1; 
+}
+
+/* Posiciones en las esquinas y la nueva al centro-abajo */
+.img-f1 { top: 10%; left: 5%; transform: rotate(-10deg); }
+.img-f2 { bottom: 30%; right: 8%; transform: rotate(8deg); border-color: #CCFF00; }
+.img-f3 { top: 20%; right: 5%; transform: rotate(15deg); }
+.img-f4 { bottom: 20%; left: 7%; transform: rotate(-5deg); border-color: #CCFF00; }
+
+/* Foto 5: Rescatada de las sombras, asomándose por la derecha */
+.img-f5 { 
+  bottom: 10%; 
+  left: 62%; /* La empujamos hacia la derecha para que escape del texto */
+  transform: rotate(-7deg); /* Inclinación brutalista */
+  width: 25%; 
+}
+
+/* Efecto interactivo al pasar el mouse */
+.img-flotante:hover {
+  filter: grayscale(0%) contrast(100%);
+  transform: scale(1.15) rotate(0deg);
+  z-index: 20; 
+  box-shadow: 15px 15px 0px #CCFF00;
+}
+
+/* --- RETRASOS EN CASCADA ACTUALIZADOS --- */
+.retraso-2 { transition-delay: 0.5s; }
+.retraso-3 { transition-delay: 0.8s; }
+.retraso-4 { transition-delay: 1.1s; }
+.retraso-5 { transition-delay: 1.4s; } /* La quinta foto cierra el despliegue */
