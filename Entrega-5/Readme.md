@@ -1,6 +1,6 @@
-#README GENERAL
+# README GENERAL
 
-##El Arte de las faltas en el Superclásico chileno
+## El Arte de las faltas en el Superclásico chileno
 
 #### El Superclásico entre Universidad de Chile y Colo-Colo es un hecho que divide en dos al país, todo fanático del fútbol tiene la emoción de vivir dicho día. Se analizan el presente de los jugadores, resultados, historial de partidos, estrategias, entre otros. Pero hay una parte que se analiza poco, solo se disfruta y se pasa por encima, las faltas.
 
