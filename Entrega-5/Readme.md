@@ -4,7 +4,7 @@
 
 #### El Superclásico entre Universidad de Chile y Colo-Colo es un hecho que divide en dos al país, todo fanático del fútbol tiene la emoción de vivir dicho día. Se analizan el presente de los jugadores, resultados, historial de partidos, estrategias, entre otros. Pero hay una parte que se analiza poco, solo se disfruta y se pasa por encima, las faltas.
 
-#### Un ámbito que ha estado presente durante todos estos partidos del siglo 21, está el famoso mito de que este tipo de enfrentamientos suelen ser más agresivos de lo normal ¿Pero qué tan real es esto? ¿Cómo ha evolucionado la cantidad de faltas? ¿Qué factores influyen un mayor impacto en estos? Por lo que, en nuestro reportaje vamos a contar la historia de las faltas dentro del Superclásico chileno durante el siglo 21.
+#### Un ámbito que ha estado presente durante todos estos partidos del siglo 21, está el famoso mito de que este tipo de enfrentamientos suelen ser más agresivos de lo normal ¿Pero qué tan real es esto? ¿Cómo ha evolucionado la cantidad de faltas? ¿Qué factores influyen un mayor impacto en estos? Por lo que, en nuestro reportaje vamos a contar la historia de las faltas dentro del Superclásico chileno durante el siglo 21, con datos y hechos de partidos que han marcado estos años.
 
 ## Hipótesis:
 
