@@ -21,12 +21,12 @@
 
 
 body {
-  cursor: url('imágenes/tarjeta-amarilla.png'), auto;
+  cursor: url('../Entrega-5/diseno_historia/recurso/tarjeta-amarilla.png'), auto;
     align-items: center;
 }
 
 a:hover, button:hover {
-  cursor: url('imágenes/tarjeta-roja.png'), pointer;
+  cursor: url('../Entrega-5/diseno_historia/recurso/tarjeta-roja.png'), pointer;
 }
 
 img {
