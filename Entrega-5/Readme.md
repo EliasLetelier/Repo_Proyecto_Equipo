@@ -21,3 +21,4 @@
 #### | Redacción|      1         |       1       |
 #### | Contenido|      1         |       1       |
 #### | Programar|      0         |       1       |
+#### | Readme   |      1         |       0       |
