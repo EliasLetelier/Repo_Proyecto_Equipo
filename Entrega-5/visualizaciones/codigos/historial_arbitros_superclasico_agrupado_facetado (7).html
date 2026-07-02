@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-9e1594c221070f55f64c493f5eba9bd3"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Ganador", "scale": {"domain": ["U de Chile", "Colo-Colo", "Empate"], "range": ["#003399", "#000000", "#808080"]}, "title": "Resultado Final", "type": "nominal"}, "x": {"field": "\u00c1rbitro", "sort": {"field": "Cantidad", "op": "sum", "order": "descending"}, "title": "\u00c1rbitro", "type": "nominal"}, "xOffset": {"field": "Ganador", "type": "nominal"}, "y": {"field": "Cantidad", "title": "N\u00famero de Partidos", "type": "quantitative"}}, "params": [{"name": "param_11", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Historial por \u00c1rbitro: Victorias y Empates (Supercl\u00e1sico) - Agrupado", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-9e1594c221070f55f64c493f5eba9bd3": [{"\u00c1rbitro": "Carlos Chand\u00eda", "Ganador": "Colo-Colo", "Cantidad": 4}, {"\u00c1rbitro": "Carlos Chand\u00eda", "Ganador": "Empate", "Cantidad": 2}, {"\u00c1rbitro": "Carlos Chand\u00eda", "Ganador": "U de Chile", "Cantidad": 1}, {"\u00c1rbitro": "Cristi\u00e1n Garay", "Ganador": "Colo-Colo", "Cantidad": 1}, {"\u00c1rbitro": "Cristi\u00e1n Garay", "Ganador": "Empate", "Cantidad": 2}, {"\u00c1rbitro": "Cristi\u00e1n Garay", "Ganador": "U de Chile", "Cantidad": 1}, {"\u00c1rbitro": "Eduardo Gamboa", "Ganador": "Colo-Colo", "Cantidad": 4}, {"\u00c1rbitro": "Eduardo Gamboa", "Ganador": "Empate", "Cantidad": 1}, {"\u00c1rbitro": "Eduardo Gamboa", "Ganador": "U de Chile", "Cantidad": 1}, {"\u00c1rbitro": "Enrique Osses", "Ganador": "Colo-Colo", "Cantidad": 1}, {"\u00c1rbitro": "Enrique Osses", "Ganador": "Empate", "Cantidad": 1}, {"\u00c1rbitro": "Enrique Osses", "Ganador": "U de Chile", "Cantidad": 3}, {"\u00c1rbitro": "Felipe Gonz\u00e1lez Alveal", "Ganador": "Empate", "Cantidad": 1}, {"\u00c1rbitro": "Felipe Gonz\u00e1lez Alveal", "Ganador": "U de Chile", "Cantidad": 1}, {"\u00c1rbitro": "Jorge Osorio", "Ganador": "Colo-Colo", "Cantidad": 4}, {"\u00c1rbitro": "Julio Bascu\u00f1\u00e1n", "Ganador": "Colo-Colo", "Cantidad": 4}, {"\u00c1rbitro": "Julio Bascu\u00f1\u00e1n", "Ganador": "Empate", "Cantidad": 2}, {"\u00c1rbitro": "Julio Bascu\u00f1\u00e1n", "Ganador": "U de Chile", "Cantidad": 2}, {"\u00c1rbitro": "Pablo Pozo", "Ganador": "Colo-Colo", "Cantidad": 4}, {"\u00c1rbitro": "Pablo Pozo", "Ganador": "Empate", "Cantidad": 1}, {"\u00c1rbitro": "Pablo Pozo", "Ganador": "U de Chile", "Cantidad": 1}, {"\u00c1rbitro": "Patricio Polic", "Ganador": "Colo-Colo", "Cantidad": 1}, {"\u00c1rbitro": "Patricio Polic", "Ganador": "U de Chile", "Cantidad": 1}, {"\u00c1rbitro": "Piero Maza", "Ganador": "Colo-Colo", "Cantidad": 1}, {"\u00c1rbitro": "Piero Maza", "Ganador": "U de Chile", "Cantidad": 1}, {"\u00c1rbitro": "Roberto Tobar", "Ganador": "Colo-Colo", "Cantidad": 5}, {"\u00c1rbitro": "Roberto Tobar", "Ganador": "Empate", "Cantidad": 2}, {"\u00c1rbitro": "Rub\u00e9n Selman", "Ganador": "Colo-Colo", "Cantidad": 1}, {"\u00c1rbitro": "Rub\u00e9n Selman", "Ganador": "Empate", "Cantidad": 2}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
