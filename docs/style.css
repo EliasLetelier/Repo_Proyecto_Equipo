@@ -20,7 +20,23 @@ body {
     cursor: url('imagenes/tarjeta-roja.png'), pointer !important;
 }
 
-img { border: 5px solid red; border-radius: 20px; margin-bottom: 20px; }
+/* =========================================
+    FONDOS DE VIDEO ABSOLUTOS
+    ========================================= */
+section { position: relative; }
+section > div:not(.bg-video-container), section > video.vid-flotante, section > img.img-flotante { 
+    position: relative; z-index: 2; 
+}
+
+.bg-video-container {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0 !important; overflow: hidden;
+}
+.bg-video-container video {
+    width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(150%);
+}
+.bg-video-container .capa-oscura {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 5, 5, 0.85);
+}
 
 /* =========================================
     TEXTOS E INTERACTIVIDAD BRUTALISTA
@@ -46,60 +62,73 @@ img { border: 5px solid red; border-radius: 20px; margin-bottom: 20px; }
 @keyframes slide-in-bck-right { 0% { transform: translateZ(700px) translateX(400px); opacity: 0; } 100% { transform: translateZ(0) translateX(0); opacity: 1; } }
 
 /* =========================================
-    SECCIONES BASE Y COLLAGE DE 5 FOTOS
+    SECCIONES BASE Y VIDEOS BRUTALISTAS
     ========================================= */
-.seccion-expediente { background-color: #050505; padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; gap: 80px; border-bottom: 5px solid #FF0000; }
+.seccion-expediente { padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; gap: 80px; border-bottom: 5px solid #FF0000; }
 .columna-imagenes { width: 55%; position: relative; min-height: 700px; }
-.img-brutal { position: absolute; width: 65%; border: 4px solid #CCFF00; box-shadow: 10px 10px 0px #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.3s ease; }
+
+/* Soporte para fotos Y videos de patadas */
+.img-brutal, .vid-brutal { position: absolute; width: 65%; border: 4px solid #CCFF00; box-shadow: 10px 10px 0px #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.3s ease; object-fit: cover;}
 .img-1 { top: 0; left: -5%; transform: rotate(-5deg); z-index: 2; }
 .img-2 { top: 50px; right: 5%; transform: rotate(7deg); z-index: 1; }
 .img-3 { top: 220px; left: -2%; transform: rotate(-8deg); z-index: 3; }
 .img-4 { top: 260px; right: 0; transform: rotate(4deg); z-index: 4; }
 .img-5 { top: 150px; left: 15%; width: 70%; transform: rotate(-2deg); z-index: 5; border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; }
-.img-brutal:hover { z-index: 10; filter: grayscale(0%) contrast(100%); transform: rotate(0deg) scale(1.1); box-shadow: 15px 15px 0px #CCFF00; }
+.img-brutal:hover, .vid-brutal:hover { z-index: 10; filter: grayscale(0%) contrast(100%); transform: rotate(0deg) scale(1.1); box-shadow: 15px 15px 0px #CCFF00; }
 .img-5:hover { box-shadow: 15px 15px 0px #FF0000; }
 
 /* =========================================
-    SECCIÓN VIDEO FONDO Y GRÁFICOS APILADOS
+    GRÁFICOS APILADOS Y VIDEOS FLOTANTES EXTRAS
     ========================================= */
-.seccion-video-fondo { position: relative; padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; gap: 80px; overflow: hidden; border-bottom: 5px solid #FF0000; min-height: 80vh; }
-.video-fondo-seccion { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: grayscale(100%) contrast(150%); }
-.seccion-video-fondo::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 0; }
-.seccion-video-fondo > div { position: relative; z-index: 1; }
-
+.seccion-video-fondo { padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; gap: 80px; border-bottom: 5px solid #FF0000; min-height: 80vh; }
 .columna-grafico-caos { width: 55%; position: relative; min-height: 600px; }
+
 .grafico-flotante { position: absolute; width: 85%; border-radius: 10px; background: #fff; padding: 10px; border: 5px solid; transition: all 0.4s ease; filter: grayscale(100%); }
 .grafico-flotante-1 { top: 20px; left: 0; transform: rotate(-3deg); border-color: #CCFF00; box-shadow: 10px 10px 0px #FF0000; z-index: 2; }
 .grafico-flotante-2 { top: 200px; right: 0; transform: rotate(4deg); border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; z-index: 1; }
 .grafico-flotante:hover { filter: grayscale(0%); transform: rotate(0deg) scale(1.1); z-index: 10; box-shadow: 15px 15px 0px #000; }
 
+/* Videos Flotantes sueltos */
+.img-flotante, .vid-flotante { position: absolute; border: 4px solid #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.5s ease; z-index: 1; object-fit: cover;}
+.vid-flotante:hover, .img-flotante:hover { filter: grayscale(0%) contrast(100%); transform: scale(1.15) rotate(0deg); z-index: 20; box-shadow: 15px 15px 0px #CCFF00; }
+
+/* Posiciones de los 20 videos flotantes por sección */
+.vid-f-ext-6 { width: 20%; top: 5%; right: -5%; transform: rotate(10deg); border-color: #CCFF00; }
+.vid-f-ext-7 { width: 25%; bottom: -5%; left: 10%; transform: rotate(-8deg); }
+.vid-f-ext-8 { width: 18%; top: 20%; left: 5%; transform: rotate(5deg); }
+.vid-f-ext-9 { width: 22%; bottom: 10%; right: 5%; transform: rotate(-12deg); border-color: #CCFF00; }
+.vid-f-ext-15 { width: 18%; top: 5%; left: 2%; transform: rotate(15deg); }
+.vid-f-ext-16 { width: 20%; top: 20%; right: 2%; transform: rotate(-5deg); border-color: #CCFF00; }
+.vid-f-ext-17 { width: 22%; top: 40%; left: 5%; transform: rotate(8deg); }
+.vid-f-ext-18 { width: 19%; top: 60%; right: 5%; transform: rotate(-10deg); }
+.vid-f-ext-19 { width: 24%; top: 80%; left: 3%; transform: rotate(5deg); border-color: #CCFF00; }
+.vid-f-ext-20 { width: 21%; bottom: 5%; right: 2%; transform: rotate(-8deg); }
+
 /* =========================================
     SECCIÓN LÍNEA DE TIEMPO (GRÁFICO GIGANTE)
     ========================================= */
-.seccion-datos { background-color: #050505; padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; border-bottom: 5px solid #FF0000; }
+.seccion-datos { padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; border-bottom: 5px solid #FF0000; }
 .grafico-gigante { border: 5px solid #CCFF00; box-shadow: 15px 15px 0px #FF0000; background: #fff; padding: 10px; width: 100%; max-width: 1000px; margin: 0 auto; filter: grayscale(100%); transition: all 0.4s ease; }
 .grafico-gigante:hover { filter: grayscale(0%); transform: scale(1.05); border-color: #FF0000; box-shadow: 15px 15px 0px #CCFF00; }
 
 /* =========================================
-    SECCIÓN CASO OSSES Y FOTOS FLOTANTES
+    SECCIÓN CASO OSSES
     ========================================= */
-.seccion-centro-scroll { position: relative; min-height: 150vh; background-color: #050505; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 5px solid #FF0000; }
-.texto-central { width: 60%; z-index: 10; text-align: center; background-color: rgba(17, 17, 17, 0.95); padding: 50px; border: 4px solid #CCFF00; box-shadow: 15px 15px 0px #FF0000; margin: 100px 0;}
+.seccion-centro-scroll { min-height: 150vh; display: flex; align-items: center; justify-content: center; border-bottom: 5px solid #FF0000; }
+.texto-central { width: 60%; text-align: center; background-color: rgba(17, 17, 17, 0.95); padding: 50px; border: 4px solid #CCFF00; box-shadow: 15px 15px 0px #FF0000; margin: 100px 0;}
 .caja-ano { margin-bottom: 20px; padding: 15px; background: #111; border-left: 4px solid #FF0000; text-align: left; }
 .caja-ano p { font-family: "Rajdhani"; font-size: 1.3rem; color: #fff; }
 
-.img-flotante { position: absolute; width: 22%; border: 4px solid #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.5s ease; z-index: 1; }
-.img-f1 { top: 5%; left: 5%; transform: rotate(-10deg); }
-.img-f2 { bottom: 25%; right: 5%; transform: rotate(8deg); border-color: #CCFF00; }
-.img-f3 { top: 15%; right: 2%; transform: rotate(15deg); }
-.img-f4 { bottom: 15%; left: 5%; transform: rotate(-5deg); border-color: #CCFF00; }
-.img-f5 { bottom: 5%; left: 60%; transform: rotate(-7deg); width: 25%; }
-.img-flotante:hover { filter: grayscale(0%) contrast(100%); transform: scale(1.15) rotate(0deg); z-index: 20; box-shadow: 15px 15px 0px #CCFF00; }
+.img-f1 { width: 22%; top: 5%; left: 5%; transform: rotate(-10deg); }
+.img-f2 { width: 22%; bottom: 25%; right: 5%; transform: rotate(8deg); border-color: #CCFF00; }
+.img-f3 { width: 22%; top: 15%; right: 2%; transform: rotate(15deg); }
+.img-f4 { width: 22%; bottom: 15%; left: 5%; transform: rotate(-5deg); border-color: #CCFF00; }
+.img-f5 { width: 25%; bottom: 5%; left: 60%; transform: rotate(-7deg); }
 
 /* =========================================
     SALÓN DE TARJETAS, DONA Y FLIP 3D
     ========================================= */
-.seccion-jugadores { background-color: #050505; padding: 10vh 5vw; border-bottom: 5px solid #CCFF00; }
+.seccion-jugadores { padding: 10vh 5vw; border-bottom: 5px solid #CCFF00; }
 .contenedor-jugadores { max-width: 1200px; margin: 0 auto; }
 .contenedor-dona { display: flex; align-items: center; justify-content: center; gap: 50px; margin-bottom: 60px; flex-wrap: wrap; }
 .texto-dona { flex: 1; min-width: 300px; }
@@ -108,31 +137,34 @@ img { border: 5px solid red; border-radius: 20px; margin-bottom: 20px; }
 .grafico-dona img:hover { transform: scale(1.1) rotate(10deg); filter: grayscale(0%); cursor: url('imagenes/tarjeta-roja.png'), pointer; }
 
 .grid-equipos { display: flex; gap: 40px; flex-wrap: wrap; }
-.columna-equipo { flex: 1; min-width: 300px; padding: 30px; border: 4px solid; background: #111111; }
+.columna-equipo { flex: 1; min-width: 300px; padding: 30px; border: 4px solid; background: rgba(17,17,17,0.9); }
 .borde-azul { border-color: #002266; box-shadow: 10px 10px 0px #002266; }
 .borde-blanco { border-color: #FFFFFF; box-shadow: 10px 10px 0px #FFFFFF; }
 .titulo-equipo { font-family: "Bebas Neue", sans-serif; font-size: 3.5rem; margin-bottom: 30px; letter-spacing: 2px; }
 .azul { color: #5599ff; }
 .blanco { color: #ffffff; }
 
-/* Tarjetas Flip 3D */
-.tarjeta-flip { background-color: transparent; width: 100%; height: 320px; perspective: 1000px; margin-bottom: 25px; }
+/* Tarjetas Flip 3D con Fotos */
+.tarjeta-flip { background-color: transparent; width: 100%; height: 380px; perspective: 1000px; margin-bottom: 25px; }
 .tarjeta-inner { position: relative; width: 100%; height: 100%; text-align: left; transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); transform-style: preserve-3d; }
 .tarjeta-flip:hover .tarjeta-inner { transform: rotateY(180deg); }
 
-.tarjeta-frente, .tarjeta-dorso { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; padding: 20px; border: 3px solid #333; display: flex; flex-direction: column; justify-content: center; }
+.tarjeta-frente, .tarjeta-dorso { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; padding: 20px; border: 3px solid #333; display: flex; flex-direction: column; justify-content: center; align-items: center;}
 .bg-azul-oscuro { background: #010a1c; border-color: #5599ff; }
 .bg-gris-oscuro { background: #1a1a1a; border-color: #fff; }
 
-.tarjeta-frente h4 { font-family: "Bebas Neue"; font-size: 2.2rem; color: #fff; letter-spacing: 1px; margin-bottom: 10px; }
+.foto-jugador { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 4px solid #CCFF00; margin-bottom: 15px; filter: grayscale(100%); transition: 0.3s; }
+.tarjeta-flip:hover .foto-jugador { filter: grayscale(0%); transform: scale(1.1); }
+
+.tarjeta-frente h4 { font-family: "Bebas Neue"; font-size: 2.2rem; color: #fff; letter-spacing: 1px; margin-bottom: 10px; text-align: center;}
 .click-hint { font-family: "Rajdhani"; color: #CCFF00; font-weight: 700; margin-top: auto; font-size: 1rem; }
 
-.tarjeta-dorso { transform: rotateY(180deg); border: 4px solid #000; overflow-y: auto;}
+.tarjeta-dorso { transform: rotateY(180deg); border: 4px solid #000; overflow-y: auto; align-items: flex-start;}
 .bg-azul-brutal { background: #5599ff; color: #000; }
 .bg-blanco-brutal { background: #fff; color: #000; }
 .bg-rojo-brutal { background: #FF0000; color: #fff; border-color: #fff; }
 
-.tarjeta-dorso h4 { font-family: "Bebas Neue"; font-size: 1.8rem; margin-bottom: 10px; border-bottom: 2px solid; padding-bottom: 5px; }
+.tarjeta-dorso h4 { font-family: "Bebas Neue"; font-size: 1.8rem; margin-bottom: 10px; border-bottom: 2px solid; padding-bottom: 5px; width: 100%;}
 .lista-expediente { font-family: "Rajdhani"; font-size: 1.1rem; line-height: 1.4; list-style: square; padding-left: 20px; }
 .lista-expediente li { margin-bottom: 8px; }
 .text-black { color: #000; }
@@ -144,19 +176,15 @@ img { border: 5px solid red; border-radius: 20px; margin-bottom: 20px; }
     EL CAOS 2012 (ACORDEÓN INTERACTIVO)
     ========================================= */
 .acordeon-brutal { width: 100%; max-width: 900px; margin: 30px auto; display: flex; flex-direction: column; gap: 15px; }
-
-.item-acordeon { background: #111; border: 4px solid #CCFF00; box-shadow: 8px 8px 0px #FF0000; transition: all 0.4s ease; overflow: hidden; height: 75px; /* Altura cerrada */ }
-
+.item-acordeon { background: rgba(17,17,17,0.95); border: 4px solid #CCFF00; box-shadow: 8px 8px 0px #FF0000; transition: all 0.4s ease; overflow: hidden; height: 75px; }
 .item-acordeon.activo { height: auto; border-color: #FF0000; box-shadow: 8px 8px 0px #CCFF00; }
 
 .cabecera-acordeon { padding: 20px; font-family: "Bebas Neue"; font-size: 2rem; color: #fff; display: flex; justify-content: space-between; align-items: center; user-select: none; }
-
 .icono-toggle { color: #CCFF00; font-size: 2.5rem; transition: transform 0.3s ease; line-height: 0.5; }
 .item-acordeon.activo .icono-toggle { transform: rotate(45deg); color: #FF0000; }
 
 .contenido-acordeon { padding: 0 20px 20px 20px; opacity: 0; transition: opacity 0.5s ease; }
 .item-acordeon.activo .contenido-acordeon { opacity: 1; }
-
 .contenido-acordeon p { font-family: "Rajdhani"; font-size: 1.3rem; color: #ddd; margin-bottom: 15px; }
 .stats-comparativa { display: flex; justify-content: space-between; background: #050505; border: 2px solid #555; padding: 15px; margin-top: 10px;}
 .stat-box { flex: 1; text-align: center; font-family: "Rajdhani"; font-size: 1.2rem; }
@@ -169,25 +197,19 @@ img { border: 5px solid red; border-radius: 20px; margin-bottom: 20px; }
     EL CAOS 2025 (TIMELINE GLITCH)
     ========================================= */
 .timeline-2025 { display: flex; flex-direction: column; gap: 30px; margin-top: 40px; }
-
-.evento-timeline { background: #111; border-left: 10px solid #CCFF00; padding: 30px 25px; position: relative; transition: all 0.3s ease; }
+.evento-timeline { background: rgba(17,17,17,0.95); border-left: 10px solid #CCFF00; padding: 30px 25px; position: relative; transition: all 0.3s ease; }
 .evento-timeline:hover { transform: translateX(15px); border-left-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; background: #1a1a1a; }
-
 .fecha-brutal { position: absolute; top: -15px; right: 20px; background: #FF0000; color: #fff; font-family: "Bebas Neue"; padding: 5px 15px; font-size: 1.2rem; letter-spacing: 1px; }
 
 .evento-timeline h4 { font-family: "Bebas Neue"; font-size: 2.5rem; color: #fff; margin-bottom: 15px; margin-top: 10px; }
 .evento-timeline p { font-family: "Rajdhani"; font-size: 1.3rem; color: #ddd; margin-bottom: 10px; }
 
-/* Animación de Glitch para las tarjetas rojas */
 .rojas-texto { color: #FF0000 !important; font-weight: 700; display: inline-block; animation: latido 2s infinite; }
 @keyframes latido {
     0% { transform: scale(1); text-shadow: 0 0 0 rgba(255,0,0,0); }
     50% { transform: scale(1.02); text-shadow: 2px 2px 5px rgba(255,0,0,0.8); }
     100% { transform: scale(1); text-shadow: 0 0 0 rgba(255,0,0,0); }
 }
-
-.caja-veredicto { margin-top: 60px; padding: 40px; background: #CCFF00; border: 5px solid #FF0000; box-shadow: 15px 15px 0px #FF0000; transition: transform 0.3s; }
-.caja-veredicto:hover { transform: scale(1.02); }
 
 /* =========================================
     CHART.JS Y FOOTER
