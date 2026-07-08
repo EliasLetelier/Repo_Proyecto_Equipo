@@ -1,323 +1,170 @@
-/* --- ANIMACIONES DE SCROLL --- */
-.oculto-al-scroll {
-  opacity: 0;
-  transform: translateY(100px);
-  transition: all 1.2s cubic-bezier(0.1, 0.8, 0.3, 1);
-}
-
-.aparecer {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* =========================================
+   ANIMACIONES DE SCROLL Y SETUP BÁSICO
+   ========================================= */
+.oculto-al-scroll { opacity: 0; transform: translateY(100px); transition: all 1.2s cubic-bezier(0.1, 0.8, 0.3, 1); }
+.aparecer { opacity: 1; transform: translateY(0); }
 .retraso-1 { transition-delay: 0.3s; }
 .retraso-2 { transition-delay: 0.5s; }
 .retraso-3 { transition-delay: 0.8s; }
 .retraso-4 { transition-delay: 1.1s; }
 .retraso-5 { transition-delay: 1.4s; }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   cursor: url('imagenes/tarjeta-amarilla.png'), auto;
-  align-items: center;
-  background-color: #050505;
-  color: #FFFFFF;
-  overflow-x: hidden;
+  background-color: #050505; color: #FFFFFF; overflow-x: hidden;
 }
 
-a:hover, button:hover {
-  cursor: url('imagenes/tarjeta-roja.png'), pointer;
+.cursor-rojo:hover, a:hover, button:hover {
+  cursor: url('imagenes/tarjeta-roja.png'), pointer !important;
 }
 
-img {
-  border: 5px solid red; 
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
+img { border: 5px solid red; border-radius: 20px; margin-bottom: 20px; }
 
-/* TEXTOS Y TIPOGRAFÍA */
-.columna-texto {
-  width: 45%;
-  padding-right: 3vw;
-}
+/* =========================================
+   TEXTOS E INTERACTIVIDAD BRUTALISTA
+   ========================================= */
+.columna-texto { width: 45%; padding-right: 3vw; }
+.subtitulo-caos { font-family: "Bebas Neue", sans-serif; font-size: 5vw; color: #CCFF00; margin-top: 0; margin-bottom: 30px; line-height: 0.9; text-transform: uppercase; text-shadow: 4px 4px 0px #FF0000; }
+.texto-informe { font-family: "Rajdhani", sans-serif; font-weight: 500; font-size: 1.5rem; line-height: 1.6; color: #FFFFFF; margin-bottom: 25px; background-color: #111111; padding: 20px 25px; border-left: 6px solid #FF0000; }
 
-.subtitulo-caos {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 5vw;
-  color: #CCFF00;
-  margin-top: 0;
-  margin-bottom: 30px;
-  line-height: 0.9;
-  text-transform: uppercase;
-  text-shadow: 4px 4px 0px #FF0000;
-}
+.texto-interactivo { transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+.texto-interactivo:hover { transform: scale(1.03); border-left-color: #CCFF00; box-shadow: 8px 8px 0px #FF0000; }
 
-.texto-informe {
-  font-family: "Rajdhani", sans-serif;
-  font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 1.6;
-  color: #FFFFFF;
-  margin-bottom: 25px;
-  background-color: #111111; 
-  padding: 20px 25px;
-  border-left: 6px solid #FF0000; 
-}
+/* =========================================
+   PORTADA HERO
+   ========================================= */
+.hero-brutalista { position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 10px solid #CCFF00; }
+.video-fondo { position: absolute; top: 50%; left: 50%; width: 100vw; height: 100vh; object-fit: cover; transform: translate(-50%, -50%); z-index: 1; filter: grayscale(100%) contrast(150%); }
+.contenedor-titulo { position: relative; z-index: 2; width: 100%; padding: 0 2vw; perspective: 1200px; }
+.titulo-caos { font-family: "Bebas Neue", sans-serif; font-size: 11vw; color: #FF0000; margin: 0; line-height: 0.85; text-transform: uppercase; }
+.linea-izquierda { display: block; text-align: left; text-shadow: 12px 12px 0px #CCFF00, -2px -2px 0px #000; animation: slide-in-bck-left 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both; }
+.linea-derecha { display: block; text-align: right; text-shadow: 12px 12px 0px #CCFF00, -2px -2px 0px #000; margin-top: 8vh; animation: slide-in-bck-right 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both; animation-delay: 2s; }
 
-/* PORTADA HERO */
-.hero-brutalista {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 10px solid #CCFF00;
-}
+@keyframes slide-in-bck-left { 0% { transform: translateZ(700px) translateX(-400px); opacity: 0; } 100% { transform: translateZ(0) translateX(0); opacity: 1; } }
+@keyframes slide-in-bck-right { 0% { transform: translateZ(700px) translateX(400px); opacity: 0; } 100% { transform: translateZ(0) translateX(0); opacity: 1; } }
 
-.video-fondo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  filter: grayscale(100%) contrast(150%); 
-}
-
-.contenedor-titulo {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 0 2vw;
-  perspective: 1200px; 
-}
-
-.titulo-caos {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 11vw;
-  color: #FF0000;
-  margin: 0;
-  line-height: 0.85;
-  text-transform: uppercase;
-}
-
-.linea-izquierda {
-  display: block;
-  text-align: left;
-  text-shadow: 12px 12px 0px #CCFF00, -2px -2px 0px #000;
-  -webkit-animation: slide-in-bck-left 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-  animation: slide-in-bck-left 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-}
-
-.linea-derecha {
-  display: block;
-  text-align: right;
-  text-shadow: 12px 12px 0px #CCFF00, -2px -2px 0px #000;
-  margin-top: 8vh;
-  -webkit-animation: slide-in-bck-right 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-  animation: slide-in-bck-right 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-}
-
-@keyframes slide-in-bck-left {
-  0% { transform: translateZ(700px) translateX(-400px); opacity: 0; }
-  100% { transform: translateZ(0) translateX(0); opacity: 1; }
-}
-@keyframes slide-in-bck-right {
-  0% { transform: translateZ(700px) translateX(400px); opacity: 0; }
-  100% { transform: translateZ(0) translateX(0); opacity: 1; }
-}
-
-/* SECCIONES BÁSICAS */
-.seccion-expediente {
-  background-color: #050505;
-  padding: 15vh 5vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-  border-bottom: 5px solid #FF0000;
-}
-
-.columna-imagenes {
-  width: 55%;
-  position: relative;
-  min-height: 700px;
-}
-
-.img-brutal {
-  position: absolute; 
-  width: 65%;
-  border: 4px solid #CCFF00;
-  box-shadow: 10px 10px 0px #FF0000; 
-  filter: grayscale(100%) contrast(120%); 
-  transition: all 0.3s ease; 
-}
-
+/* =========================================
+   SECCIONES BASE Y COLLAGE DE 5 FOTOS
+   ========================================= */
+.seccion-expediente { background-color: #050505; padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; gap: 80px; border-bottom: 5px solid #FF0000; }
+.columna-imagenes { width: 55%; position: relative; min-height: 700px; }
+.img-brutal { position: absolute; width: 65%; border: 4px solid #CCFF00; box-shadow: 10px 10px 0px #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.3s ease; }
 .img-1 { top: 0; left: -5%; transform: rotate(-5deg); z-index: 2; }
 .img-2 { top: 50px; right: 5%; transform: rotate(7deg); z-index: 1; }
 .img-3 { top: 220px; left: -2%; transform: rotate(-8deg); z-index: 3; }
 .img-4 { top: 260px; right: 0; transform: rotate(4deg); z-index: 4; }
 .img-5 { top: 150px; left: 15%; width: 70%; transform: rotate(-2deg); z-index: 5; border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; }
-
-.img-brutal:hover {
-  z-index: 10;
-  filter: grayscale(0%) contrast(100%);
-  transform: rotate(0deg) scale(1.1); 
-  box-shadow: 15px 15px 0px #CCFF00;
-}
+.img-brutal:hover { z-index: 10; filter: grayscale(0%) contrast(100%); transform: rotate(0deg) scale(1.1); box-shadow: 15px 15px 0px #CCFF00; }
 .img-5:hover { box-shadow: 15px 15px 0px #FF0000; }
 
-/* SECCIÓN VIDEO FONDO */
-.seccion-video-fondo {
-  position: relative;
-  padding: 15vh 5vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-  overflow: hidden;
-  border-bottom: 5px solid #FF0000;
-  min-height: 80vh;
-}
-
-.video-fondo-seccion {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  filter: grayscale(100%) contrast(150%);
-}
-
-.seccion-video-fondo::after {
-  content: ""; position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.7); 
-  z-index: 0;
-}
-
+/* =========================================
+   SECCIÓN VIDEO FONDO Y GRÁFICOS APILADOS
+   ========================================= */
+.seccion-video-fondo { position: relative; padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; gap: 80px; overflow: hidden; border-bottom: 5px solid #FF0000; min-height: 80vh; }
+.video-fondo-seccion { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: grayscale(100%) contrast(150%); }
+.seccion-video-fondo::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 0; }
 .seccion-video-fondo > div { position: relative; z-index: 1; }
 
-/* SECCIÓN DATOS Y ESTÁTICOS */
-.seccion-datos {
-  background-color: #050505;
-  padding: 15vh 5vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-  border-bottom: 5px solid #FF0000;
-}
+.columna-grafico-caos { width: 55%; position: relative; min-height: 600px; }
+.grafico-flotante { position: absolute; width: 85%; border-radius: 10px; background: #fff; padding: 10px; border: 5px solid; transition: all 0.4s ease; filter: grayscale(100%); }
+.grafico-flotante-1 { top: 20px; left: 0; transform: rotate(-3deg); border-color: #CCFF00; box-shadow: 10px 10px 0px #FF0000; z-index: 2; }
+.grafico-flotante-2 { top: 200px; right: 0; transform: rotate(4deg); border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; z-index: 1; }
+.grafico-flotante:hover { filter: grayscale(0%); transform: rotate(0deg) scale(1.1); z-index: 10; box-shadow: 15px 15px 0px #000; }
 
-.grafico-estatico {
-  display: block; width: 95%; height: auto;
-  border-radius: 20px;
-  filter: grayscale(100%) contrast(120%);
-  transition: filter 0.3s ease;
-}
+/* =========================================
+   SECCIÓN LÍNEA DE TIEMPO (GRÁFICO GIGANTE)
+   ========================================= */
+.seccion-datos { background-color: #050505; padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; border-bottom: 5px solid #FF0000; }
+.grafico-gigante { border: 5px solid #CCFF00; box-shadow: 15px 15px 0px #FF0000; background: #fff; padding: 10px; width: 100%; max-width: 1000px; margin: 0 auto; filter: grayscale(100%); transition: all 0.4s ease; }
+.grafico-gigante:hover { filter: grayscale(0%); transform: scale(1.05); border-color: #FF0000; box-shadow: 15px 15px 0px #CCFF00; }
 
-.grafico-estatico:hover { filter: grayscale(0%) contrast(100%); }
+/* =========================================
+   SECCIÓN CASO OSSES Y FOTOS FLOTANTES
+   ========================================= */
+.seccion-centro-scroll { position: relative; min-height: 130vh; background-color: #050505; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 5px solid #FF0000; }
+.texto-central { width: 55%; z-index: 10; text-align: center; background-color: rgba(17, 17, 17, 0.95); padding: 50px; border: 4px solid #CCFF00; box-shadow: 15px 15px 0px #FF0000; }
+.caja-ano { margin-bottom: 20px; padding: 15px; background: #111; border-left: 4px solid #FF0000; text-align: left; }
+.caja-ano p { font-family: "Rajdhani"; font-size: 1.3rem; color: #fff; }
 
-.grafico-estatico-1 { border: 5px solid #CCFF00; box-shadow: 12px 12px 0px #FF0000; }
-.grafico-estatico-2 { border: 5px solid #FF0000; box-shadow: 12px 12px 0px #CCFF00; }
+.img-flotante { position: absolute; width: 22%; border: 4px solid #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.5s ease; z-index: 1; }
+.img-f1 { top: 5%; left: 5%; transform: rotate(-10deg); }
+.img-f2 { bottom: 25%; right: 5%; transform: rotate(8deg); border-color: #CCFF00; }
+.img-f3 { top: 15%; right: 2%; transform: rotate(15deg); }
+.img-f4 { bottom: 15%; left: 5%; transform: rotate(-5deg); border-color: #CCFF00; }
+.img-f5 { bottom: 5%; left: 60%; transform: rotate(-7deg); width: 25%; }
+.img-flotante:hover { filter: grayscale(0%) contrast(100%); transform: scale(1.15) rotate(0deg); z-index: 20; box-shadow: 15px 15px 0px #CCFF00; }
 
-/* SECCIÓN SCROLL CENTRAL (OSSES Y 5 FOTOS) */
-.seccion-centro-scroll {
-  position: relative;
-  min-height: 120vh;
-  background-color: #050505;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; 
-  border-bottom: 5px solid #FF0000;
-}
-
-.texto-central {
-  width: 50%;
-  z-index: 10; 
-  text-align: center;
-  background-color: rgba(17, 17, 17, 0.95); 
-  padding: 50px;
-  border: 4px solid #CCFF00;
-  box-shadow: 15px 15px 0px #FF0000;
-}
-
-.texto-central .texto-informe { border-left: none; margin-bottom: 20px; }
-
-.img-flotante {
-  position: absolute; width: 22%; 
-  border: 4px solid #FF0000; filter: grayscale(100%) contrast(120%);
-  transition: all 0.5s ease; z-index: 1; 
-}
-
-.img-f1 { top: 10%; left: 5%; transform: rotate(-10deg); }
-.img-f2 { bottom: 30%; right: 8%; transform: rotate(8deg); border-color: #CCFF00; }
-.img-f3 { top: 20%; right: 5%; transform: rotate(15deg); }
-.img-f4 { bottom: 20%; left: 7%; transform: rotate(-5deg); border-color: #CCFF00; }
-.img-f5 { bottom: 10%; left: 62%; transform: rotate(-7deg); width: 25%; }
-
-.img-flotante:hover {
-  filter: grayscale(0%) contrast(100%); transform: scale(1.15) rotate(0deg);
-  z-index: 20; box-shadow: 15px 15px 0px #CCFF00;
-}
-
-/* JUGADORES Y TARJETAS */
-.seccion-jugadores {
-  background-color: #050505;
-  padding: 10vh 5vw;
-  border-bottom: 5px solid #CCFF00;
-}
-
+/* =========================================
+   SALÓN DE TARJETAS, DONA Y FLIP 3D
+   ========================================= */
+.seccion-jugadores { background-color: #050505; padding: 10vh 5vw; border-bottom: 5px solid #CCFF00; }
 .contenedor-jugadores { max-width: 1200px; margin: 0 auto; }
+.contenedor-dona { display: flex; align-items: center; justify-content: center; gap: 50px; margin-bottom: 60px; flex-wrap: wrap; }
+.texto-dona { flex: 1; min-width: 300px; }
+.grafico-dona { flex: 1; min-width: 300px; text-align: center; }
+.grafico-dona img { width: 100%; max-width: 350px; border-radius: 50%; border: 5px solid #FF0000; box-shadow: 10px 10px 0px #CCFF00; background: #fff; padding: 10px; transition: transform 0.4s; filter: grayscale(100%); }
+.grafico-dona img:hover { transform: scale(1.1) rotate(10deg); filter: grayscale(0%); cursor: url('imagenes/tarjeta-roja.png'), pointer; }
 
-.grid-equipos { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
+.grid-equipos { display: flex; gap: 40px; flex-wrap: wrap; }
 .columna-equipo { flex: 1; min-width: 300px; padding: 30px; border: 4px solid; background: #111111; }
-
 .borde-azul { border-color: #002266; box-shadow: 10px 10px 0px #002266; }
 .borde-blanco { border-color: #FFFFFF; box-shadow: 10px 10px 0px #FFFFFF; }
-
 .titulo-equipo { font-family: "Bebas Neue", sans-serif; font-size: 3.5rem; margin-bottom: 30px; letter-spacing: 2px; }
 .azul { color: #5599ff; }
 .blanco { color: #ffffff; }
 
-.tarjeta-jugador {
-  background: #050505; padding: 20px; border: 2px solid #333;
-  margin-bottom: 25px; transition: transform 0.3s ease;
-}
+/* Tarjetas Flip 3D */
+.tarjeta-flip { background-color: transparent; width: 100%; height: 280px; perspective: 1000px; margin-bottom: 25px; }
+.tarjeta-inner { position: relative; width: 100%; height: 100%; text-align: left; transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); transform-style: preserve-3d; }
+.tarjeta-flip:hover .tarjeta-inner { transform: rotateY(180deg); }
 
-.tarjeta-jugador:hover { transform: scale(1.05); border-color: #CCFF00; }
-.tarjeta-jugador h4 { font-family: "Bebas Neue", sans-serif; font-size: 2rem; color: #fff; margin-bottom: 10px; letter-spacing: 1px; }
+.tarjeta-frente, .tarjeta-dorso { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; padding: 20px; border: 3px solid #333; display: flex; flex-direction: column; justify-content: center; }
+.bg-azul-oscuro { background: #010a1c; border-color: #5599ff; }
+.bg-gris-oscuro { background: #1a1a1a; border-color: #fff; }
 
-.texto-jugador { font-family: "Rajdhani", sans-serif; font-size: 1.2rem; color: #ccc; line-height: 1.4; margin-top: 15px; }
+.tarjeta-frente h4 { font-family: "Bebas Neue"; font-size: 2.2rem; color: #fff; letter-spacing: 1px; margin-bottom: 10px; }
+.click-hint { font-family: "Rajdhani"; color: #CCFF00; font-weight: 700; margin-top: auto; font-size: 1rem; }
+
+.tarjeta-dorso { transform: rotateY(180deg); border: 4px solid #000; }
+.bg-azul-brutal { background: #5599ff; color: #000; }
+.bg-blanco-brutal { background: #fff; color: #000; }
+.bg-rojo-brutal { background: #FF0000; color: #fff; border-color: #fff; }
+
+.tarjeta-dorso h4 { font-family: "Bebas Neue"; font-size: 1.8rem; margin-bottom: 10px; border-bottom: 2px solid; padding-bottom: 5px; }
+.lista-expediente { font-family: "Rajdhani"; font-size: 1.1rem; line-height: 1.4; list-style: square; padding-left: 20px; }
+.lista-expediente li { margin-bottom: 5px; }
+.text-black { color: #000; }
 
 .badge-amarilla { background: #ffd700; color: #000; padding: 5px 12px; font-family: "Rajdhani", sans-serif; font-weight: 700; font-size: 1rem; display: inline-block; margin-bottom: 5px; }
 .badge-roja { background: #FF0000; color: #fff; padding: 5px 12px; font-family: "Rajdhani", sans-serif; font-weight: 700; font-size: 1rem; display: inline-block; margin-bottom: 5px; }
 
-.caja-hipotesis { margin-top: 40px; padding: 30px; border: 4px solid #CCFF00; box-shadow: 12px 12px 0px #FF0000; }
+/* =========================================
+   EL CAOS 2012 Y 2025 (TIMELINES)
+   ========================================= */
+.grid-fichas-2012 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+.ficha-partido { background: #111; padding: 20px; border: 3px solid #CCFF00; box-shadow: 8px 8px 0px #FF0000; }
+.ficha-partido h4 { font-family: "Bebas Neue"; font-size: 2rem; color: #fff; margin-bottom: 10px; }
+.ficha-partido p { font-family: "Rajdhani"; font-size: 1.2rem; color: #ddd; line-height: 1.4; }
 
-/* FOOTER INSTITUCIONAL */
-.footer-equipo {
-  background: #111111;
-  padding: 60px 20px;
-  text-align: center;
-  border-top: 10px solid #FF0000;
-}
+.timeline-2025 { display: flex; flex-direction: column; gap: 20px; margin-top: 30px; }
+.evento-timeline { background: #111; border-left: 10px solid #CCFF00; padding: 25px; position: relative; transition: all 0.3s ease; }
+.evento-timeline:hover { transform: translateX(15px); border-left-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; background: #1a1a1a; }
+.fecha-brutal { position: absolute; top: -15px; right: 20px; background: #FF0000; color: #fff; font-family: "Bebas Neue"; padding: 5px 15px; font-size: 1.2rem; letter-spacing: 1px; }
+.evento-timeline h4 { font-family: "Bebas Neue"; font-size: 2.5rem; color: #fff; margin-bottom: 15px; margin-top: 10px; }
+.evento-timeline p { font-family: "Rajdhani"; font-size: 1.3rem; color: #ddd; margin-bottom: 10px; }
+.rojas-texto { color: #FF0000 !important; font-weight: 700; }
 
+.caja-veredicto { margin-top: 50px; padding: 40px; background: #CCFF00; border: 5px solid #FF0000; box-shadow: 15px 15px 0px #FF0000; transition: transform 0.3s; }
+.caja-veredicto:hover { transform: scale(1.02); }
+
+/* =========================================
+   CHART.JS Y FOOTER
+   ========================================= */
+.contenedor-canvas { background: #ffffff; padding: 20px; width: 100%; max-width: 900px; margin: 0 auto; border: 5px solid #FF0000; box-shadow: 15px 15px 0px #CCFF00; border-radius: 10px; }
+
+.footer-equipo { background: #111111; padding: 60px 20px; text-align: center; border-top: 10px solid #FF0000; }
 .texto-footer { font-family: "Rajdhani", sans-serif; font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
-.btn-repo {
-  display: inline-block; margin-top: 25px; background: #CCFF00; color: #000;
-  font-family: "Bebas Neue", sans-serif; font-size: 1.8rem; text-decoration: none;
-  padding: 10px 30px; transition: all 0.3s ease; box-shadow: 5px 5px 0px #FF0000;
-}
+.btn-repo { display: inline-block; margin-top: 25px; background: #CCFF00; color: #000; font-family: "Bebas Neue", sans-serif; font-size: 1.8rem; text-decoration: none; padding: 10px 30px; transition: all 0.3s ease; box-shadow: 5px 5px 0px #FF0000; }
 .btn-repo:hover { background: #FF0000; color: #CCFF00; box-shadow: 5px 5px 0px #000; transform: translateY(-3px); }
