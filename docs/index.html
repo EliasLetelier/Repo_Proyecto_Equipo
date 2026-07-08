@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -6,15 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Superclásico: El mito de la agresividad</title>
   
-  <!-- Tipografías Brutalistas -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Librería Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- Conexión al archivo CSS separado -->
   <link href="style.css" rel="stylesheet" />
 </head>
 <body>
@@ -34,6 +29,11 @@
 
   <!-- ================= SECCIÓN 1: EL EXPEDIENTE ================= -->
   <section class="seccion-expediente">
+    <div class="bg-video-container">
+      <video autoplay muted loop playsinline><source src="videos/falta_1.mp4" type="video/mp4"></video>
+      <div class="capa-oscura"></div>
+    </div>
+
     <div class="columna-texto oculto-al-scroll">
       <h2 class="subtitulo-caos cursor-rojo">EL REGISTRO DE LA VIOLENCIA</h2>
       <p class="texto-informe texto-interactivo">
@@ -45,19 +45,22 @@
     </div>
     
     <div class="columna-imagenes oculto-al-scroll retraso-1">
-      <img src="https://media.gettyimages.com/id/946942060/es/foto/santiago-chile-matias-rodriguez-of-u-de-chile-fights-for-the-ball-with-juan-manuel-insaurralde.jpg?s=612x612&w=0&k=20&c=bz7RsPPJcxTXseYhs9H_wvZIjGLnqKT6iYbrjmgP-xY=" alt="disputa" class="img-brutal img-1 cursor-rojo">
-      <img src="https://media.gettyimages.com/id/168104275/es/foto/santiago-chile-jose-rojas-of-universidad-de-chile-struggles-for-the-ball-with-carlos-munoz-of.jpg?s=612x612&w=0&k=20&c=T9GAFzQFc9C1Jvzj-05VZod8WIkp7sXYgd3KGzGcrfg=" alt="disputa fuerte" class="img-brutal img-2 cursor-rojo">
-      <img src="https://redgol.cl/export/sites/redgol/img/2021/12/01/salas-melendez-ok.jpg_1635255969.jpg" alt="Falta violenta" class="img-brutal img-3 cursor-rojo">
-      <img src="https://media.redgol.cl/wp-content/uploads/sites/8/2024/08/20101404/rodrigo-melexndez-colo-colo-universidad-de-chile-nacional-fuxtbol-1_crop1660398998264png_242310155-740x416.webp" alt="Grito" class="img-brutal img-4 cursor-rojo">
-      <img src="https://www.encancha.cl/resizer/v2/UXZL5BGR4ZH37DBBP7BARNGVNQ.jpg?auth=be096764edb475a8a22297d17c1917ae9d28de6483b21705ff62f1e3b7c0d541&smart=true&width=800&height=534&quality=70" alt="Árbitro mostrando roja" class="img-brutal img-5 cursor-rojo">
+      <!-- 5 Videos de patadas reemplazando las fotos -->
+      <video class="vid-brutal img-1 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_1.mp4" type="video/mp4"></video>
+      <video class="vid-brutal img-2 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_2.mp4" type="video/mp4"></video>
+      <video class="vid-brutal img-3 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_3.mp4" type="video/mp4"></video>
+      <video class="vid-brutal img-4 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_4.mp4" type="video/mp4"></video>
+      <video class="vid-brutal img-5 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_5.mp4" type="video/mp4"></video>
     </div>
   </section>
 
   <!-- ================= SECCIÓN 2: LA ENTRADA A LA CANCHA ================= -->
   <section class="seccion-video-fondo">
-    <video class="video-fondo-seccion" autoplay muted loop playsinline>
-      <source src="videos/Entrada-U-CC.mp4" type="video/mp4">
-    </video>
+    <div class="bg-video-container">
+      <video autoplay muted loop playsinline><source src="videos/Entrada-U-CC.mp4" type="video/mp4"></video>
+      <div class="capa-oscura"></div>
+    </div>
+
     <div class="columna-texto oculto-al-scroll">
       <h2 class="subtitulo-caos"> LA ENTRADA A LA CANCHA: ESTADIOS, ÁRBITROS E HISTORIAL </h2>
       <p class="texto-informe texto-interactivo">
@@ -71,15 +74,27 @@
     <div class="columna-grafico-caos oculto-al-scroll retraso-1">
       <img src="imagenes/grafico-victorias.png" alt="Victorias Local vs Visitante" class="grafico-flotante grafico-flotante-1 cursor-rojo">
       <img src="imagenes/grafico-arbitro-victorias.png" alt="Historial por Árbitro" class="grafico-flotante grafico-flotante-2 cursor-rojo">
+      <!-- Videos Flotantes 6 y 7 -->
+      <video class="vid-flotante vid-f-ext-6 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_6.mp4" type="video/mp4"></video>
+      <video class="vid-flotante vid-f-ext-7 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_7.mp4" type="video/mp4"></video>
     </div>
   </section>
 
   <!-- ================= SECCIÓN 3: LA LÍNEA DE TIEMPO (GRÁFICO GIGANTE) ================= -->
-  <section class="seccion-datos" style="flex-direction: column; justify-content: center; align-items: center; background-color: #111111;">
+  <section class="seccion-datos" style="flex-direction: column; justify-content: center; align-items: center;">
+    <div class="bg-video-container">
+      <video autoplay muted loop playsinline><source src="videos/falta_8.mp4" type="video/mp4"></video>
+      <div class="capa-oscura"></div>
+    </div>
+
+    <!-- Videos Flotantes 8 y 9 -->
+    <video class="vid-flotante vid-f-ext-8 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_8.mp4" type="video/mp4"></video>
+    <video class="vid-flotante vid-f-ext-9 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_9.mp4" type="video/mp4"></video>
+
     <div class="oculto-al-scroll" style="width: 90%; text-align: center;">
       <h2 class="subtitulo-caos cursor-rojo">LA LÍNEA DE TIEMPO DEL CAOS</h2>
       <p class="texto-informe texto-interactivo" style="width: 80%; margin: 0 auto 40px auto; text-align: center;">
-        Los números no mienten. Al observar la evolución de las sanciones desde el año 2000, la gráfica revela la brutal anomalía de 2012 (el pico máximo histórico acercándose a las 70 sanciones totales) y cómo el 2025 resucitó la agresividad con un repunte escalofriante.
+        Los números no mienten. Al observar la evolución de las sanciones desde el año 2000, la gráfica revela la brutal anomalía de 2012 y cómo el 2025 resucitó la agresividad con un repunte escalofriante.
       </p>
       <img src="imagenes/vis_01.png" alt="Evolución de sanciones en el Superclásico" class="grafico-gigante cursor-rojo">
     </div>
@@ -87,51 +102,61 @@
 
   <!-- ================= SECCIÓN 4: EL CASO OSSES ================= -->
   <section class="seccion-centro-scroll">
+    <div class="bg-video-container">
+      <video autoplay muted loop playsinline><source src="videos/falta_10.mp4" type="video/mp4"></video>
+      <div class="capa-oscura"></div>
+    </div>
+
     <div class="texto-central oculto-al-scroll">
       <h2 class="subtitulo-caos" style="font-size: 6vw;">EL CASO OSSES</h2>
       <p class="texto-informe texto-interactivo">
-        Uno de los árbitros que llama la atención del gráfico anterior es Enrique Osses, el cual tiene historial favorable a la U, lo que no es habitual. Sus 5 encuentros dirigiendo dejaron de todo, por lo que es importante repasar un poco su rendimiento.
+        Uno de los árbitros que llama la atención del gráfico anterior es Enrique Osses. Sus 5 encuentros dirigiendo dejaron de todo, por lo que es importante repasar un poco su rendimiento.
       </p>
       
       <div class="caja-ano texto-interactivo cursor-rojo">
         <h3 style="color: #CCFF00; font-family: 'Bebas Neue'; font-size: 2.5rem;">2005: EL BAUTIZO</h3>
         <p>Un empate 1-1 trabado. Tras el gol del empate de Colo-Colo, Jorge Valdivia fue a gritarle el gol en la cara al arquero azul Johnny Herrera.</p>
-        <p style="margin-top: 10px;">Ante la monumental gresca, Osses cortó por lo sano con su clásico estilo rígido y expulsó a 5 jugadores (Herrera, Valdivia, Ponce, Villarroel y Pinto). Cimentó su fama drástica.</p>
+        <p style="margin-top: 10px;">Ante la monumental gresca, Osses cortó por lo sano y expulsó a 5 jugadores (Herrera, Valdivia, Ponce, Villarroel y Pinto). Cimentó su fama drástica.</p>
       </div>
 
       <div class="caja-ano texto-interactivo cursor-rojo">
         <h3 style="color: #CCFF00; font-family: 'Bebas Neue'; font-size: 2.5rem;">2007: EL CLÁSICO QUE NO TERMINÓ</h3>
-        <p>Semifinal de vuelta del Torneo de Clausura. El ambiente venía calientísimo desde la ida. Colo-Colo ganaba y la tensión en la cancha era total.</p>
-        <p style="margin-top: 10px;">Tras expulsar a Rafael Olarra en la U, los ánimos estallaron y llovieron objetos. Osses no dudó y suspendió el partido a los 67 minutos por falta de garantías.</p>
+        <p>Semifinal de vuelta del Torneo de Clausura. El ambiente venía calientísimo desde la ida.</p>
+        <p style="margin-top: 10px;">Tras expulsar a Rafael Olarra en la U, los ánimos estallaron y llovieron objetos. Osses no dudó y suspendió el partido a los 67 minutos.</p>
       </div>
 
       <div class="caja-ano texto-interactivo cursor-rojo">
         <h3 style="color: #CCFF00; font-family: 'Bebas Neue'; font-size: 2.5rem;">2008: VILLAGOL</h3>
-        <p>Un clásico mucho más táctico donde la U se impuso con un solitario gol de Manuel Villalobos. De los pocos partidos donde Osses pasó desapercibido, manejando el juego brusco con amarillas tempranas.</p>
+        <p>Un clásico mucho más táctico donde la U se impuso. De los pocos partidos donde Osses pasó desapercibido, manejando el juego brusco con amarillas tempranas.</p>
       </div>
 
       <div class="caja-ano texto-interactivo cursor-rojo">
         <h3 style="color: #CCFF00; font-family: 'Bebas Neue'; font-size: 2.5rem;">2011: EL INICIO DE UNA ERA</h3>
-        <p>La U de Jorge Sampaoli ya empezaba a mostrar su intensidad arrolladora. Lo dio vuelta agónicamente 2-1.</p>
-        <p style="margin-top: 10px;">Un arbitraje sumamente complejo por la velocidad a la que jugaba esa U. Osses manejó con personalidad los reclamos albos por la intensidad física.</p>
+        <p>La U de Jorge Sampaoli ya empezaba a mostrar su intensidad arrolladora. Lo dio vuelta agónicamente 2-1. Osses manejó con personalidad los reclamos albos por la intensidad física.</p>
       </div>
 
       <div class="caja-ano texto-interactivo cursor-rojo">
         <h3 style="color: #CCFF00; font-family: 'Bebas Neue'; font-size: 2.5rem;">2012: EL BAILE</h3>
-        <p>Semifinal de vuelta. La U de Sampaoli firmó una exhibición total de fútbol (4-0) en un Nacional inundado de azules.</p>
-        <p style="margin-top: 10px;">Osses dirigió un partido de altísima tensión donde Colo-Colo se desesperó. Expulsó correctamente a Mauro Olivi y Gonzalo Fierro, controlando que no terminara en batalla campal.</p>
+        <p>Semifinal de vuelta. La U firmó una exhibición total de fútbol (4-0) en un Nacional inundado de azules.</p>
+        <p style="margin-top: 10px;">Osses dirigió un partido de altísima tensión donde Colo-Colo se desesperó. Expulsó correctamente a Mauro Olivi y Gonzalo Fierro.</p>
       </div>
     </div>
     
-    <img src="https://media.redgol.cl/wp-content/uploads/sites/8/2026/05/05134617/johnny-herrera--e1778003289468-740x416.webp" class="img-flotante img-f1 oculto-al-scroll retraso-1 cursor-rojo">
-    <img src="imagenes/2007.jpg" alt="Evidencia 2" class="img-flotante img-f2 oculto-al-scroll retraso-2 cursor-rojo">
-    <img src="imagenes/villagol.jpg" alt="Evidencia 3" class="img-flotante img-f3 oculto-al-scroll retraso-3 cursor-rojo">
-    <img src="https://mundografico.emol.cl/2011/04/30/18140_1005002.jpg" alt="Evidencia 4" class="img-flotante img-f4 oculto-al-scroll retraso-4 cursor-rojo">
-    <img src="https://i.imgur.com/JWuiC.jpg" alt="Evidencia 5" class="img-flotante img-f5 oculto-al-scroll retraso-5 cursor-rojo">
+    <!-- Videos 10 al 14 reemplazando las fotos flotantes de Osses -->
+    <video class="vid-flotante img-f1 oculto-al-scroll retraso-1 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_10.mp4" type="video/mp4"></video>
+    <video class="vid-flotante img-f2 oculto-al-scroll retraso-2 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_11.mp4" type="video/mp4"></video>
+    <video class="vid-flotante img-f3 oculto-al-scroll retraso-3 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_12.mp4" type="video/mp4"></video>
+    <video class="vid-flotante img-f4 oculto-al-scroll retraso-4 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_13.mp4" type="video/mp4"></video>
+    <video class="vid-flotante img-f5 oculto-al-scroll retraso-5 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_14.mp4" type="video/mp4"></video>
   </section>
 
-  <!-- ================= SECCIÓN 5: EL SALÓN DE LAS TARJETAS (INTERACTIVO 3D) ================= -->
+  <!-- ================= SECCIÓN 5: EL SALÓN DE LAS TARJETAS (FOTOS Y FLIP) ================= -->
   <section class="seccion-jugadores">
+    <div class="bg-video-container">
+      <video autoplay muted loop playsinline><source src="videos/falta_15.mp4" type="video/mp4"></video>
+      <div class="capa-oscura"></div>
+    </div>
+
     <div class="contenedor-jugadores oculto-al-scroll">
       <h2 class="subtitulo-caos cursor-rojo" style="text-align: center; font-size: 6vw;">EL SALÓN DE LAS TARJETAS</h2>
       
@@ -148,7 +173,6 @@
       
       <!-- TARJETAS FLIP -->
       <div class="grid-equipos">
-        
         <!-- UNIVERSIDAD DE CHILE -->
         <div class="columna-equipo borde-azul">
           <h3 class="titulo-equipo azul">UNIVERSIDAD DE CHILE</h3>
@@ -156,6 +180,7 @@
           <div class="tarjeta-flip cursor-rojo">
             <div class="tarjeta-inner">
               <div class="tarjeta-frente bg-azul-oscuro">
+                <img src="imagenes/iturra.jpg" alt="Manuel Iturra" class="foto-jugador">
                 <h4>MANUEL ITURRA</h4>
                 <span class="badge-amarilla">8 Amarillas</span>
                 <p class="click-hint">PASAR EL MOUSE PARA VER EXPEDIENTE >></p>
@@ -175,6 +200,7 @@
           <div class="tarjeta-flip cursor-rojo">
             <div class="tarjeta-inner">
               <div class="tarjeta-frente bg-azul-oscuro">
+                <img src="imagenes/olarra.jpg" alt="Rafael Olarra" class="foto-jugador">
                 <h4>RAFAEL OLARRA</h4>
                 <span class="badge-roja">2 Rojas Directas</span>
                 <p class="click-hint">PASAR EL MOUSE PARA VER EXPEDIENTE >></p>
@@ -200,6 +226,7 @@
           <div class="tarjeta-flip cursor-rojo">
             <div class="tarjeta-inner">
               <div class="tarjeta-frente bg-gris-oscuro">
+                <img src="imagenes/mena.jpg" alt="Luis Mena" class="foto-jugador">
                 <h4>LUIS MENA</h4>
                 <span class="badge-amarilla">6 Amarillas</span>
                 <span class="badge-roja">1 Roja</span>
@@ -220,6 +247,7 @@
           <div class="tarjeta-flip cursor-rojo">
             <div class="tarjeta-inner">
               <div class="tarjeta-frente bg-gris-oscuro">
+                <img src="imagenes/miralles.jpg" alt="Ezequiel Miralles" class="foto-jugador">
                 <h4>EZEQUIEL MIRALLES</h4>
                 <span class="badge-roja">2 Rojas</span>
                 <p class="click-hint">PASAR EL MOUSE PARA VER EXPEDIENTE >></p>
@@ -240,11 +268,23 @@
     </div>
   </section>
 
-  <!-- ================= SECCIÓN 6: LA HISTORIA 2012 Y 2025 (INTERACTIVA) ================= -->
-  <section class="seccion-expediente" style="flex-direction: column; align-items: center; gap: 40px; background-color: #000;">
-    
-    <!-- === EL ACORDEÓN DE 2012 === -->
-    <div class="oculto-al-scroll" style="width: 100%; max-width: 1000px;">
+  <!-- ================= SECCIÓN 6: LA HISTORIA 2012 Y 2025 ================= -->
+  <section class="seccion-expediente" style="flex-direction: column; align-items: center; gap: 40px;">
+    <div class="bg-video-container">
+      <video autoplay muted loop playsinline><source src="videos/fondo-s6.mp4" type="video/mp4"></video>
+      <div class="capa-oscura"></div>
+    </div>
+
+    <!-- Videos Flotantes 15 al 20 en la sección histórica -->
+    <video class="vid-flotante vid-f-ext-15 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_15.mp4" type="video/mp4"></video>
+    <video class="vid-flotante vid-f-ext-16 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_16.mp4" type="video/mp4"></video>
+    <video class="vid-flotante vid-f-ext-17 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_17.mp4" type="video/mp4"></video>
+    <video class="vid-flotante vid-f-ext-18 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_18.mp4" type="video/mp4"></video>
+    <video class="vid-flotante vid-f-ext-19 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_19.mp4" type="video/mp4"></video>
+    <video class="vid-flotante vid-f-ext-20 cursor-rojo" autoplay muted loop playsinline><source src="videos/falta_20.mp4" type="video/mp4"></video>
+
+    <!-- === 2012 === -->
+    <div class="oculto-al-scroll" style="width: 100%; max-width: 1000px; position: relative; z-index: 10;">
       <h2 class="subtitulo-caos" style="font-size: 5vw; text-align: center;">2012: LA TÁCTICA VS EL CHOQUE</h2>
       <p class="texto-informe texto-interactivo" style="text-align: center; margin-bottom: 40px;">
         Esta es la anatomía del año más violento. Por el formato de playoffs, se enfrentaron cuatro veces. La Universidad de Chile llegaba como el invicto campeón de la Copa Sudamericana, una máquina táctica. Por otro lado, Colo-Colo, con una sequía de títulos desde 2009 y plagado de dudas, apostó todo a la destrucción del juego rival. <br><span style="color:#CCFF00;"><strong>Haz clic en los expedientes para revelar los datos:</strong></span>
@@ -255,7 +295,7 @@
         <div class="item-acordeon">
           <div class="cabecera-acordeon">TORNEO APERTURA (5-0 U. DE CHILE) <span class="icono-toggle">+</span></div>
           <div class="contenido-acordeon">
-            <p>El Estadio Nacional presenció una de las mayores superioridades azules. Mientras el equipo local funcionaba a la perfección, el visitante recurrió a la fuerza desmedida, culminando con la expulsión de Mauro Olivi por doble amonestación.</p>
+            <p>Mientras el equipo local funcionaba a la perfección, el visitante recurrió a la fuerza desmedida, culminando con la expulsión de Mauro Olivi por doble amonestación.</p>
             <div class="stats-comparativa">
               <div class="stat-box stat-u"><strong>U. DE CHILE:</strong> 17 Faltas | 4 Amarillas</div>
               <div class="stat-box stat-cc"><strong>COLO-COLO:</strong> 24 Faltas | 7 Amarillas | <span style="color:red; font-weight:bold;">1 ROJA</span></div>
@@ -291,7 +331,7 @@
         <div class="item-acordeon">
           <div class="cabecera-acordeon">TORNEO CLAUSURA (1-0 COLO-COLO) <span class="icono-toggle">+</span></div>
           <div class="contenido-acordeon">
-            <p>Uno de los partidos más icónicos y descontrolados de la década. A pesar de la victoria alba, el encuentro terminó en una gresca monumental que involucró al arquero albo Francisco Prieto y a Johnny Herrera de la U, quienes vieron la roja tras el pitazo final.</p>
+            <p>A pesar de la victoria alba, el encuentro terminó en una gresca monumental que involucró al arquero albo Francisco Prieto y a Johnny Herrera de la U, quienes vieron la roja tras el pitazo final.</p>
             <div class="stats-comparativa">
               <div class="stat-box stat-u"><strong>U. DE CHILE:</strong> 7 Faltas | 4 Amarillas | <span style="color:red; font-weight:bold;">2 ROJAS</span> (Mena, Herrera)</div>
               <div class="stat-box stat-cc"><strong>COLO-COLO:</strong> 21 Faltas | 6 Amarillas | <span style="color:red; font-weight:bold;">2 ROJAS</span> (Muñoz, Prieto)</div>
@@ -307,8 +347,8 @@
       </div>
     </div>
 
-    <!-- === EL TIMELINE DE 2025 === -->
-    <div class="oculto-al-scroll" style="width: 100%; max-width: 1000px; margin-top: 80px;">
+    <!-- === 2025 === -->
+    <div class="oculto-al-scroll" style="width: 100%; max-width: 1000px; margin-top: 80px; position: relative; z-index: 10;">
       <h2 class="subtitulo-caos" style="font-size: 5vw; text-align: center;">2025: EL GIRO DE 180 GRADOS</h2>
       <p class="texto-informe texto-interactivo" style="margin-bottom: 30px;">
         Posterior a 2012, la agresividad fue a la baja año tras año (siendo el 2024 el segundo año más pacífico de la historia). Pero en 2025, el escenario mutó. Colo-Colo vivía un centenario para olvidar por su mal rendimiento, mientras que la U. de Chile peleaba por todo. La combinación de frustración y presión encendió nuevamente la pólvora.
@@ -318,7 +358,7 @@
         <div class="evento-timeline texto-interactivo cursor-rojo">
           <div class="fecha-brutal">12 DE JULIO (ESTADIO NACIONAL)</div>
           <h4>U. DE CHILE 2 - 1 COLO-COLO</h4>
-          <p><strong>El Contexto:</strong> Partido pospuesto por los incidentes de Colo-Colo vs Fortaleza en Libertadores. Un encuentro tenso donde los 3 goles fueron vía penal.</p>
+          <p><strong>El Contexto:</strong> Partido pospuesto por incidentes de Colo-Colo vs Fortaleza en Libertadores. Un encuentro tenso donde los 3 goles fueron vía penal.</p>
           <p><strong>Las Faltas:</strong> A diferencia de 2012, la fricción fue pareja: U (13 faltas, 4 amarillas) | CC (14 faltas, 3 amarillas).</p>
           <p><span class="rojas-texto">ALERTA ROJA:</span> Expulsión directa para Marcelo Díaz (U) y Esteban Pavez (CC) tras agredirse al final del encuentro.</p>
         </div>
@@ -339,18 +379,16 @@
           <p><span class="rojas-texto">ALERTA ROJA:</span> La temprana expulsión de Sebastián Vegas sepultó cualquier esperanza del equipo popular.</p>
         </div>
       </div>
-
-      <div class="caja-veredicto cursor-rojo">
-        <h3 class="subtitulo-caos" style="font-size: 3.5vw; color: #000; text-shadow: 2px 2px 0px #fff;">EL VEREDICTO DEL MITO</h3>
-        <p class="texto-informe" style="background-color: transparent; border: none; color: #000; font-weight: 700; font-size: 1.6rem; padding: 0;">
-          La evidencia histórica rompe nuestra hipótesis inicial. Al comenzar la investigación, creíamos que con el avance tecnológico (VAR) y las estrictas normativas de juego limpio, la agresividad bajaría definitivamente. Y aunque así fue durante casi una década, el año 2025 demostró la cruda realidad: <strong>las tecnologías no logran contener la violencia cuando el rendimiento deportivo y la presión histórica chocan</strong>. Las tácticas desesperadas dictan la cantidad de faltas, confirmando que en el Superclásico, el peso de la camiseta y el honor aún le ganan a la frialdad de las reglas.
-        </p>
-      </div>
     </div>
   </section>
 
   <!-- ================= SECCIÓN 7: VISUALIZACIÓN INTERACTIVA (CHART.JS) ================= -->
   <section class="seccion-datos" style="flex-direction: column; justify-content: center; align-items: center;">
+    <div class="bg-video-container">
+      <video autoplay muted loop playsinline><source src="videos/fondo-s7.mp4" type="video/mp4"></video>
+      <div class="capa-oscura"></div>
+    </div>
+
     <div class="oculto-al-scroll" style="width: 100%; text-align: center;">
       <h2 class="subtitulo-caos">2012 vs 2025 EN NÚMEROS</h2>
       <p class="texto-informe" style="width: 80%; margin: 0 auto 40px auto; text-align: center;">
@@ -373,7 +411,6 @@
     </div>
   </footer>
 
-  <!-- Conexión al archivo JavaScript separado -->
   <script src="script.js"></script>
 </body>
 </html>
