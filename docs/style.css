@@ -107,7 +107,7 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 .grafico-flotante-1 { width: 60%; top: 20px; left: 0; transform: rotate(-3deg); border-color: #CCFF00; box-shadow: 10px 10px 0px #FF0000; z-index: 2; }
 
 
-.grafico-flotante-2 { width: 110%; top: 200px; right: -5%; transform: rotate(4deg); border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; z-index: 1; }
+.grafico-flotante-2 { width: 120%; top: 200px; right: -5%; transform: rotate(4deg); border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; z-index: 1; }
 
 .grafico-flotante:hover { filter: grayscale(0%); transform: rotate(0deg) scale(1.1); z-index: 10; box-shadow: 15px 15px 0px #000; }
 /* Videos Flotantes sueltos */
