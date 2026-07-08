@@ -237,20 +237,24 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 
 
 /* =========================================
-    LOGOTIPO
+    LOGOTIPO 
     ========================================= */
 .contenedor-logo {
     width: 100%;
     text-align: center;
     padding: 40px 0;
-    background-color: #050505;
+    background-color: #050505; /* Fondo negro */
 }
 
 .logo-principal {
-    max-width: 250px; /* Tamaño máximo para que no sea gigante */
+    max-width: 250px;
     width: 100%;
     height: auto;
-    border: none !important; /* Quitamos el borde rojo para que el logo se vea limpio */
+    display: block; /* Forzamos que sea un bloque */
+    margin: 0 auto;
+    background-color: #ffffff; /* FONDOS BLANCO: Si tu logo es negro, esto lo hará ver */
+    padding: 10px; /* Un poco de aire */
+    border-radius: 10px; /* Bordes suaves */
     filter: grayscale(100%);
     transition: all 0.4s ease;
 }
@@ -258,5 +262,4 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 .logo-principal:hover {
     filter: grayscale(0%);
     transform: scale(1.05);
-    cursor: url('imagenes/tarjeta-roja.png'), pointer !important;
 }
