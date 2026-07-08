@@ -43,7 +43,6 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 /* =========================================
     TEXTOS E INTERACTIVIDAD BRUTALISTA
     ========================================= */
-.columna-texto { width: 45%; padding-right: 3vw; }
 .subtitulo-caos { font-family: "Bebas Neue", sans-serif; font-size: 5vw; color: #CCFF00; margin-top: 0; margin-bottom: 30px; line-height: 0.9; text-transform: uppercase; text-shadow: 4px 4px 0px #FF0000; }
 .texto-informe { font-family: "Rajdhani", sans-serif; font-weight: 500; font-size: 1.5rem; line-height: 1.6; color: #FFFFFF; margin-bottom: 25px; background-color: #111111; padding: 20px 25px; border-left: 6px solid #FF0000; }
 
@@ -66,23 +65,40 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 /* =========================================
     SECCIONES BASE Y COLLAGE DE 5 FOTOS
     ========================================= */
-.seccion-expediente { padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; gap: 80px; border-bottom: 5px solid #FF0000; }
-.columna-imagenes { width: 55%; position: relative; min-height: 700px; }
+.seccion-expediente { 
+    padding: 15vh 10vw; /* Ajustado para empujar las columnas hacia el centro */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; /* FORZAMOS A QUE EL CONJUNTO ESTÉ EN EL MEDIO */
+    gap: 60px; 
+    border-bottom: 5px solid #FF0000; 
+}
+.columna-texto { width: 50%; max-width: 650px; padding-right: 0; z-index: 10;}
+.columna-imagenes { width: 50%; max-width: 650px; position: relative; min-height: 600px; z-index: 10; }
 
-.img-brutal, .vid-brutal { position: absolute; width: 65%; border: 4px solid #CCFF00; box-shadow: 10px 10px 0px #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.3s ease; object-fit: cover;}
-.img-1 { top: 0; left: -5%; transform: rotate(-5deg); z-index: 2; }
-.img-2 { top: 50px; right: 5%; transform: rotate(7deg); z-index: 1; }
-.img-3 { top: 220px; left: -2%; transform: rotate(-8deg); z-index: 3; }
-.img-4 { top: 260px; right: 0; transform: rotate(4deg); z-index: 4; }
-.img-5 { top: 150px; left: 15%; width: 70%; transform: rotate(-2deg); z-index: 5; border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; }
+/* Ajuste del collage para que no invada el texto */
+.img-brutal, .vid-brutal { position: absolute; width: 60%; border: 4px solid #CCFF00; box-shadow: 10px 10px 0px #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.3s ease; object-fit: cover;}
+.img-1 { top: 0; left: 5%; transform: rotate(-5deg); z-index: 2; }
+.img-2 { top: 40px; right: 0%; transform: rotate(7deg); z-index: 1; }
+.img-3 { top: 220px; left: 0%; transform: rotate(-8deg); z-index: 3; }
+.img-4 { top: 240px; right: 5%; transform: rotate(4deg); z-index: 4; }
+.img-5 { top: 150px; left: 20%; width: 70%; transform: rotate(-2deg); z-index: 5; border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; }
 .img-brutal:hover, .vid-brutal:hover { z-index: 10; filter: grayscale(0%) contrast(100%); transform: rotate(0deg) scale(1.1); box-shadow: 15px 15px 0px #CCFF00; }
 .img-5:hover { box-shadow: 15px 15px 0px #FF0000; }
 
 /* =========================================
     GRÁFICOS APILADOS Y VIDEOS FLOTANTES EXTRAS
     ========================================= */
-.seccion-video-fondo { padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; gap: 80px; border-bottom: 5px solid #FF0000; min-height: 80vh; }
-.columna-grafico-caos { width: 55%; position: relative; min-height: 600px; }
+.seccion-video-fondo { 
+    padding: 15vh 10vw; /* Ajustado para empujar las columnas hacia el centro */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; /* FORZAMOS A QUE EL CONJUNTO ESTÉ EN EL MEDIO */
+    gap: 60px; 
+    border-bottom: 5px solid #FF0000; 
+    min-height: 80vh; 
+}
+.columna-grafico-caos { width: 50%; max-width: 650px; position: relative; min-height: 600px; z-index: 10;}
 
 .grafico-flotante { position: absolute; width: 85%; border-radius: 10px; background: #fff; padding: 10px; border: 5px solid; transition: all 0.4s ease; filter: grayscale(100%); }
 .grafico-flotante-1 { top: 20px; left: 0; transform: rotate(-3deg); border-color: #CCFF00; box-shadow: 10px 10px 0px #FF0000; z-index: 2; }
@@ -145,6 +161,7 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 .img-f3 { width: 18%; top: 25%; right: 2%; transform: rotate(15deg); }
 .img-f4 { width: 18%; bottom: 10%; left: 2%; transform: rotate(-5deg); border-color: #CCFF00; }
 .img-f5 { width: 18%; top: 50%; left: 3%; transform: translateY(-50%) rotate(-7deg); }
+
 /* =========================================
     SALÓN DE TARJETAS, DONA Y FLIP 3D
     ========================================= */
@@ -253,7 +270,6 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 .texto-footer { font-family: "Rajdhani", sans-serif; font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
 .btn-repo { display: inline-block; margin-top: 25px; background: #CCFF00; color: #000; font-family: "Bebas Neue", sans-serif; font-size: 1.8rem; text-decoration: none; padding: 10px 30px; transition: all 0.3s ease; box-shadow: 5px 5px 0px #FF0000; }
 .btn-repo:hover { background: #FF0000; color: #CCFF00; box-shadow: 5px 5px 0px #000; transform: translateY(-3px); }
-
 
 /* =========================================
     LOGOTIPO 
