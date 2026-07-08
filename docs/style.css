@@ -129,38 +129,48 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 .grafico-gigante:hover { filter: grayscale(0%); transform: scale(1.05); border-color: #FF0000; box-shadow: 15px 15px 0px #CCFF00; }
 
 /* =========================================
-    SECCIÓN CASO OSSES
+    SECCIÓN CASO OSSES (TEXTO AL CENTRO, VIDEOS A LOS BORDES)
     ========================================= */
 .seccion-centro-scroll { 
     min-height: 150vh; 
     display: flex; 
     align-items: center; 
-    justify-content: center; 
+    justify-content: center; /* Fuerza el centrado horizontal del texto */
     border-bottom: 5px solid #FF0000; 
-    position: relative; /* Necesario para que los videos se peguen a los bordes de esta sección */
+    position: relative; /* Clave para que los videos se peguen a los bordes de esta caja */
     overflow: hidden;
 }
 
 .texto-central { 
-    width: 55%; /* Reduje un poco el ancho para darle más aire a los videos de los bordes */
-    z-index: 50; /* Prioridad máxima para que nada lo tape */
+    width: 50%; 
+    max-width: 800px;
+    z-index: 50; /* Texto intocable por encima de todo */
     text-align: center; 
     background-color: rgba(17, 17, 17, 0.95); 
     padding: 50px; 
     border: 4px solid #CCFF00; 
     box-shadow: 15px 15px 0px #FF0000; 
-    margin: 100px 0;
+    margin: 0 auto; /* Anclaje absoluto al centro */
+    position: relative;
 }
 
 .caja-ano { margin-bottom: 20px; padding: 15px; background: #111; border-left: 4px solid #FF0000; text-align: left; }
 .caja-ano p { font-family: "Rajdhani"; font-size: 1.3rem; color: #fff; }
 
-/* Posiciones extremas a los bordes (Left y Right pegados al 2% o 3%) */
-.img-f1 { width: 18%; top: 10%; left: 2%; transform: rotate(-10deg); }
-.img-f2 { width: 18%; bottom: 15%; right: 2%; transform: rotate(8deg); border-color: #CCFF00; }
-.img-f3 { width: 18%; top: 25%; right: 2%; transform: rotate(15deg); }
-.img-f4 { width: 18%; bottom: 10%; left: 2%; transform: rotate(-5deg); border-color: #CCFF00; }
-.img-f5 { width: 18%; top: 50%; left: 3%; transform: translateY(-50%) rotate(-7deg); }
+/* Forzamos que los videos del Caso Osses FLOTEN y no hagan fila india */
+.seccion-centro-scroll .vid-flotante {
+    position: absolute !important;
+    z-index: 10;
+}
+
+/* VIDEOS PEGADOS AL BORDE IZQUIERDO */
+.img-f1 { width: 18%; top: 10%; left: 2% !important; right: auto !important; transform: rotate(-10deg); }
+.img-f5 { width: 18%; top: 50%; left: 3% !important; right: auto !important; transform: translateY(-50%) rotate(-7deg); }
+.img-f4 { width: 18%; bottom: 10%; left: 2% !important; right: auto !important; transform: rotate(-5deg); border-color: #CCFF00; }
+
+/* VIDEOS PEGADOS AL BORDE DERECHO */
+.img-f3 { width: 18%; top: 15%; right: 2% !important; left: auto !important; transform: rotate(15deg); }
+.img-f2 { width: 18%; bottom: 15%; right: 2% !important; left: auto !important; transform: rotate(8deg); border-color: #CCFF00; }
 
 /* =========================================
     SALÓN DE TARJETAS, DONA Y FLIP 3D
