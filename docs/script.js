@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. OBSERVADOR DE SCROLL (Intersection Observer)
+    // ==========================================
+    // 1. OBSERVADOR DE SCROLL (El Vigilante)
+    // ==========================================
     const elementosOcultos = document.querySelectorAll('.oculto-al-scroll');
 
     const observador = new IntersectionObserver((entradas) => {
@@ -18,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
         observador.observe(elemento);
     });
 
+    // ==========================================
     // 2. GRÁFICO INTERACTIVO CHART.JS
+    // ==========================================
     const canvasGrafico = document.getElementById('graficoFaltas');
     
     if (canvasGrafico) {
@@ -32,14 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     {
                         label: 'Faltas Univ. de Chile',
                         data: [39, 43],
-                        backgroundColor: '#002266',
+                        backgroundColor: '#002266', // Azul
                         borderColor: '#050505',
                         borderWidth: 3
                     },
                     {
                         label: 'Faltas Colo-Colo',
                         data: [87, 40],
-                        backgroundColor: '#dddddd',
+                        backgroundColor: '#dddddd', // Blanco
                         borderColor: '#050505',
                         borderWidth: 3
                     }
@@ -50,7 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 plugins: {
                     legend: {
                         position: 'top',
-                        labels: { font: { family: 'Rajdhani', size: 18, weight: 'bold' }, color: '#050505' }
+                        labels: { 
+                            font: { family: 'Rajdhani', size: 18, weight: 'bold' }, 
+                            color: '#050505' 
+                        }
                     },
                     tooltip: {
                         titleFont: { family: 'Rajdhani', size: 16 },
@@ -60,7 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 scales: {
                     y: {
                         beginAtZero: true,
-                        title: { display: true, text: 'Cantidad Total de Faltas', color: '#050505', font: { family: 'Bebas Neue', size: 24 } },
+                        title: { 
+                            display: true, 
+                            text: 'Cantidad Total de Faltas', 
+                            color: '#050505', 
+                            font: { family: 'Bebas Neue', size: 24 } 
+                        },
                         ticks: { color: '#050505', font: { family: 'Rajdhani', size: 16, weight: 'bold' } }
                     },
                     x: {
