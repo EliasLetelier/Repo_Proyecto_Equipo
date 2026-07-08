@@ -1,26 +1,73 @@
-// 1. Seleccionamos todos los elementos que tengan la clase 'oculto-al-scroll'
-const elementosOcultos = document.querySelectorAll('.oculto-al-scroll');
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. OBSERVADOR DE SCROLL (Intersection Observer)
+    const elementosOcultos = document.querySelectorAll('.oculto-al-scroll');
 
-// 2. Creamos el "vigilante" (Intersection Observer)
-const observador = new IntersectionObserver((entradas) => {
-    entradas.forEach((entrada) => {
-        // Si el elemento entra en la pantalla del usuario...
-        if (entrada.isIntersecting) {
-            // Le agregamos la clase 'aparecer' para que el CSS haga la animación
-            entrada.target.classList.add('aparecer');
-            
-            // (Opcional) Si queremos que la animación ocurra solo una vez y se quede ahí,
-            // dejamos que el vigilante deje de mirarlo:
-            observador.unobserve(entrada.target);
-        }
+    const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add('aparecer');
+                observador.unobserve(entrada.target);
+            }
+        });
+    }, {
+        threshold: 0.15 
     });
-}, {
-    // Configuración: El 0.2 significa que la animación arrancará cuando 
-    // al menos el 20% del elemento sea visible en la pantalla.
-    threshold: 0.2 
-});
 
-// 3. Le decimos al vigilante que comience a observar cada elemento que encontramos
-elementosOcultos.forEach((elemento) => {
-    observador.observe(elemento);
+    elementosOcultos.forEach((elemento) => {
+        observador.observe(elemento);
+    });
+
+    // 2. GRÁFICO INTERACTIVO CHART.JS
+    const canvasGrafico = document.getElementById('graficoFaltas');
+    
+    if (canvasGrafico) {
+        const ctx = canvasGrafico.getContext('2d');
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Temporada 2012 (4 partidos)', 'Temporada 2025 (3 partidos)'],
+                datasets: [
+                    {
+                        label: 'Faltas Univ. de Chile',
+                        data: [39, 43],
+                        backgroundColor: '#002266',
+                        borderColor: '#050505',
+                        borderWidth: 3
+                    },
+                    {
+                        label: 'Faltas Colo-Colo',
+                        data: [87, 40],
+                        backgroundColor: '#dddddd',
+                        borderColor: '#050505',
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { font: { family: 'Rajdhani', size: 18, weight: 'bold' }, color: '#050505' }
+                    },
+                    tooltip: {
+                        titleFont: { family: 'Rajdhani', size: 16 },
+                        bodyFont: { family: 'Rajdhani', size: 14 }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Cantidad Total de Faltas', color: '#050505', font: { family: 'Bebas Neue', size: 24 } },
+                        ticks: { color: '#050505', font: { family: 'Rajdhani', size: 16, weight: 'bold' } }
+                    },
+                    x: {
+                        ticks: { color: '#050505', font: { family: 'Bebas Neue', size: 20, letterSpacing: 1 } }
+                    }
+                }
+            }
+        });
+    }
 });
