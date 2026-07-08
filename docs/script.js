@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
     // ==========================================
     // 1. OBSERVADOR DE SCROLL (El Vigilante)
     // ==========================================
     const elementosOcultos = document.querySelectorAll('.oculto-al-scroll');
-
     const observador = new IntersectionObserver((entradas) => {
         entradas.forEach((entrada) => {
             if (entrada.isIntersecting) {
@@ -12,22 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 observador.unobserve(entrada.target);
             }
         });
-    }, {
-        threshold: 0.15 
-    });
+    }, { threshold: 0.15 });
 
-    elementosOcultos.forEach((elemento) => {
-        observador.observe(elemento);
-    });
+    elementosOcultos.forEach((elemento) => { observador.observe(elemento); });
 
     // ==========================================
     // 2. GRÁFICO INTERACTIVO CHART.JS
     // ==========================================
     const canvasGrafico = document.getElementById('graficoFaltas');
-    
     if (canvasGrafico) {
         const ctx = canvasGrafico.getContext('2d');
-        
         new Chart(ctx, {
             type: 'bar',
             data: {
@@ -52,17 +44,28 @@ document.addEventListener("DOMContentLoaded", () => {
             options: {
                 responsive: true,
                 plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: { 
-                            font: { family: 'Rajdhani', size: 18, weight: 'bold' }, 
-                            color: '#050505' 
-                        }
-                    },
-                    tooltip: {
-                        titleFont: { family: 'Rajdhani', size: 16 },
-                        bodyFont: { family: 'Rajdhani', size: 14 }
-                    }
+                    legend: { position: 'top', labels: { font: { family: 'Rajdhani', size: 18, weight: 'bold' }, color: '#050505' } },
+                    tooltip: { titleFont: { family: 'Rajdhani', size: 16 }, bodyFont: { family: 'Rajdhani', size: 14 } }
+                },
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: 'Cantidad Total de Faltas', color: '#050505', font: { family: 'Bebas Neue', size: 24 } }, ticks: { color: '#050505', font: { family: 'Rajdhani', size: 16, weight: 'bold' } } },
+                    x: { ticks: { color: '#050505', font: { family: 'Bebas Neue', size: 20, letterSpacing: 1 } } }
+                }
+            }
+        });
+    }
+
+    // ==========================================
+    // 3. FUNCIONES GLOBALES (ACORDEÓN)
+    // ==========================================
+    // Asignar el toggle a cada elemento del acordeón de forma global por si no funciona el atributo onclick en línea
+    const itemsAcordeon = document.querySelectorAll('.item-acordeon');
+    itemsAcordeon.forEach(item => {
+        item.addEventListener('click', function() {
+            this.classList.toggle('activo');
+        });
+    });
+});                    }
                 },
                 scales: {
                     y: {
