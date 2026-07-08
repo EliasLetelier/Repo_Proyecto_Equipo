@@ -234,3 +234,29 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 .texto-footer { font-family: "Rajdhani", sans-serif; font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
 .btn-repo { display: inline-block; margin-top: 25px; background: #CCFF00; color: #000; font-family: "Bebas Neue", sans-serif; font-size: 1.8rem; text-decoration: none; padding: 10px 30px; transition: all 0.3s ease; box-shadow: 5px 5px 0px #FF0000; }
 .btn-repo:hover { background: #FF0000; color: #CCFF00; box-shadow: 5px 5px 0px #000; transform: translateY(-3px); }
+
+
+/* =========================================
+    LOGOTIPO
+    ========================================= */
+.contenedor-logo {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+    background-color: #050505;
+}
+
+.logo-principal {
+    max-width: 250px; /* Tamaño máximo para que no sea gigante */
+    width: 100%;
+    height: auto;
+    border: none !important; /* Quitamos el borde rojo para que el logo se vea limpio */
+    filter: grayscale(100%);
+    transition: all 0.4s ease;
+}
+
+.logo-principal:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    cursor: url('imagenes/tarjeta-roja.png'), pointer !important;
+}
