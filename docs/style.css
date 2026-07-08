@@ -98,7 +98,7 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
     border-bottom: 5px solid #FF0000; 
     min-height: 80vh; 
 }
-.columna-grafico-caos { width: 50%; max-width: 650px; position: relative; min-height: 600px; z-index: 10;}
+.columna-grafico-caos { width: 40%; max-width: 650px; position: relative; min-height: 600px; z-index: 10;}
 
 .grafico-flotante { position: absolute; width: 85%; border-radius: 10px; background: #fff; padding: 10px; border: 5px solid; transition: all 0.4s ease; filter: grayscale(100%); }
 .grafico-flotante-1 { top: 20px; left: 0; transform: rotate(-3deg); border-color: #CCFF00; box-shadow: 10px 10px 0px #FF0000; z-index: 2; }
