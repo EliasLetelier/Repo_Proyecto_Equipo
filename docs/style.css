@@ -81,7 +81,7 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 .img-1 { top: 0; left: 5%; transform: rotate(-5deg); z-index: 2; }
 .img-2 { top: 40px; right: 0%; transform: rotate(7deg); z-index: 1; }
 .img-3 { top: 220px; left: 0%; transform: rotate(-8deg); z-index: 3; }
-.img-4 { top: 240px; right: 5%; transform: rotate(4deg); z-index: 4; }
+.img-4 { top: 220px; right: 10%; transform: rotate(4deg); z-index: 4; }
 .img-5 { top: 150px; left: 20%; width: 70%; transform: rotate(-2deg); z-index: 5; border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; }
 .img-brutal:hover, .vid-brutal:hover { z-index: 10; filter: grayscale(0%) contrast(100%); transform: rotate(0deg) scale(1.1); box-shadow: 15px 15px 0px #CCFF00; }
 .img-5:hover { box-shadow: 15px 15px 0px #FF0000; }
