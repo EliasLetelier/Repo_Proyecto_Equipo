@@ -20,6 +20,8 @@ body {
     cursor: url('imagenes/tarjeta-roja.png'), pointer !important;
 }
 
+img { border: 5px solid red; border-radius: 20px; margin-bottom: 20px; }
+
 /* =========================================
     FONDOS DE VIDEO ABSOLUTOS
     ========================================= */
@@ -62,12 +64,11 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 @keyframes slide-in-bck-right { 0% { transform: translateZ(700px) translateX(400px); opacity: 0; } 100% { transform: translateZ(0) translateX(0); opacity: 1; } }
 
 /* =========================================
-    SECCIONES BASE Y VIDEOS BRUTALISTAS
+    SECCIONES BASE Y COLLAGE DE 5 FOTOS
     ========================================= */
 .seccion-expediente { padding: 15vh 5vw; display: flex; align-items: center; justify-content: space-between; gap: 80px; border-bottom: 5px solid #FF0000; }
 .columna-imagenes { width: 55%; position: relative; min-height: 700px; }
 
-/* Soporte para fotos Y videos de patadas */
 .img-brutal, .vid-brutal { position: absolute; width: 65%; border: 4px solid #CCFF00; box-shadow: 10px 10px 0px #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.3s ease; object-fit: cover;}
 .img-1 { top: 0; left: -5%; transform: rotate(-5deg); z-index: 2; }
 .img-2 { top: 50px; right: 5%; transform: rotate(7deg); z-index: 1; }
@@ -92,17 +93,17 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 .img-flotante, .vid-flotante { position: absolute; border: 4px solid #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.5s ease; z-index: 1; object-fit: cover;}
 .vid-flotante:hover, .img-flotante:hover { filter: grayscale(0%) contrast(100%); transform: scale(1.15) rotate(0deg); z-index: 20; box-shadow: 15px 15px 0px #CCFF00; }
 
-/* Posiciones de los 20 videos flotantes por sección */
-.vid-f-ext-6 { width: 20%; top: 5%; right: -5%; transform: rotate(10deg); border-color: #CCFF00; }
-.vid-f-ext-7 { width: 25%; bottom: -5%; left: 10%; transform: rotate(-8deg); }
-.vid-f-ext-8 { width: 18%; top: 20%; left: 5%; transform: rotate(5deg); }
-.vid-f-ext-9 { width: 22%; bottom: 10%; right: 5%; transform: rotate(-12deg); border-color: #CCFF00; }
-.vid-f-ext-15 { width: 18%; top: 5%; left: 2%; transform: rotate(15deg); }
-.vid-f-ext-16 { width: 20%; top: 20%; right: 2%; transform: rotate(-5deg); border-color: #CCFF00; }
-.vid-f-ext-17 { width: 22%; top: 40%; left: 5%; transform: rotate(8deg); }
-.vid-f-ext-18 { width: 19%; top: 60%; right: 5%; transform: rotate(-10deg); }
-.vid-f-ext-19 { width: 24%; top: 80%; left: 3%; transform: rotate(5deg); border-color: #CCFF00; }
-.vid-f-ext-20 { width: 21%; bottom: 5%; right: 2%; transform: rotate(-8deg); }
+/* Nuevas posiciones y tamaños para los videos flotantes extras */
+.vid-f-ext-6 { width: 28%; top: 15%; right: -2%; transform: rotate(12deg); border-color: #CCFF00; }
+.vid-f-ext-7 { width: 22%; bottom: 5%; left: 8%; transform: rotate(-15deg); }
+.vid-f-ext-8 { width: 25%; top: 10%; left: -2%; transform: rotate(-6deg); }
+.vid-f-ext-9 { width: 20%; bottom: 20%; right: 2%; transform: rotate(18deg); border-color: #CCFF00; }
+.vid-f-ext-15 { width: 18%; top: 2%; left: 5%; transform: rotate(-12deg); }
+.vid-f-ext-16 { width: 26%; top: 18%; right: -3%; transform: rotate(8deg); border-color: #CCFF00; }
+.vid-f-ext-17 { width: 20%; top: 35%; left: -1%; transform: rotate(-15deg); }
+.vid-f-ext-18 { width: 24%; top: 55%; right: 4%; transform: rotate(14deg); }
+.vid-f-ext-19 { width: 19%; top: 75%; left: 8%; transform: rotate(-9deg); border-color: #CCFF00; }
+.vid-f-ext-20 { width: 22%; bottom: 2%; right: -2%; transform: rotate(11deg); }
 
 /* =========================================
     SECCIÓN LÍNEA DE TIEMPO (GRÁFICO GIGANTE)
@@ -133,8 +134,21 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 .contenedor-dona { display: flex; align-items: center; justify-content: center; gap: 50px; margin-bottom: 60px; flex-wrap: wrap; }
 .texto-dona { flex: 1; min-width: 300px; }
 .grafico-dona { flex: 1; min-width: 300px; text-align: center; }
-.grafico-dona img { width: 100%; max-width: 350px; border-radius: 50%; border: 5px solid #FF0000; box-shadow: 10px 10px 0px #CCFF00; background: #fff; padding: 10px; transition: transform 0.4s; filter: grayscale(100%); }
-.grafico-dona img:hover { transform: scale(1.1) rotate(10deg); filter: grayscale(0%); cursor: url('imagenes/tarjeta-roja.png'), pointer; }
+
+/* Corrección de la Dona para que la imagen se vea completa */
+.grafico-dona img { 
+    width: 100%; 
+    max-width: 500px; 
+    border-radius: 20px; /* Borde curvo normal en lugar de circular */
+    border: 5px solid #FF0000; 
+    box-shadow: 10px 10px 0px #CCFF00; 
+    background: #fff; 
+    padding: 20px; /* Más espacio para que no se corte */
+    transition: transform 0.4s; 
+    filter: grayscale(100%); 
+    object-fit: contain; 
+}
+.grafico-dona img:hover { transform: scale(1.1) rotate(2deg); filter: grayscale(0%); cursor: url('imagenes/tarjeta-roja.png'), pointer; }
 
 .grid-equipos { display: flex; gap: 40px; flex-wrap: wrap; }
 .columna-equipo { flex: 1; min-width: 300px; padding: 30px; border: 4px solid; background: rgba(17,17,17,0.9); }
