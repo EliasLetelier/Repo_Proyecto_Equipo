@@ -100,11 +100,16 @@ section > div:not(.bg-video-container), section > video.vid-flotante, section > 
 }
 .columna-grafico-caos { width: 40%; max-width: 650px; position: relative; min-height: 600px; z-index: 10;}
 
-.grafico-flotante { position: absolute; width: 85%; border-radius: 10px; background: #fff; padding: 10px; border: 5px solid; transition: all 0.4s ease; filter: grayscale(100%); }
-.grafico-flotante-1 { top: 20px; left: 0; transform: rotate(-3deg); border-color: #CCFF00; box-shadow: 10px 10px 0px #FF0000; z-index: 2; }
-.grafico-flotante-2 { top: 200px; right: 0; transform: rotate(4deg); border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; z-index: 1; }
-.grafico-flotante:hover { filter: grayscale(0%); transform: rotate(0deg) scale(1.1); z-index: 10; box-shadow: 15px 15px 0px #000; }
 
+.grafico-flotante { position: absolute; border-radius: 10px; background: #fff; padding: 10px; border: 5px solid; transition: all 0.4s ease; filter: grayscale(100%); }
+
+
+.grafico-flotante-1 { width: 60%; top: 20px; left: 0; transform: rotate(-3deg); border-color: #CCFF00; box-shadow: 10px 10px 0px #FF0000; z-index: 2; }
+
+
+.grafico-flotante-2 { width: 65%; top: 160px; right: 0; transform: rotate(4deg); border-color: #FF0000; box-shadow: 10px 10px 0px #CCFF00; z-index: 1; }
+
+.grafico-flotante:hover { filter: grayscale(0%); transform: rotate(0deg) scale(1.1); z-index: 10; box-shadow: 15px 15px 0px #000; }
 /* Videos Flotantes sueltos */
 .img-flotante, .vid-flotante { position: absolute; border: 4px solid #FF0000; filter: grayscale(100%) contrast(120%); transition: all 0.5s ease; z-index: 1; object-fit: cover;}
 .vid-flotante:hover, .img-flotante:hover { filter: grayscale(0%) contrast(100%); transform: scale(1.15) rotate(0deg); z-index: 20; box-shadow: 15px 15px 0px #CCFF00; }
